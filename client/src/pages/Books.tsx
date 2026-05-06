@@ -617,7 +617,80 @@ export default function Books() {
 
       {/* Book Sections */}
       {BOOKS.map((book, i) => (
-        <BookSection key={book.id} book={book} index={i} />
+        <>
+          <BookSection key={book.id} book={book} index={i} />
+          {book.id === "alex-was-here" && (
+            <div
+              key="duology-banner"
+              style={{
+                background: "linear-gradient(135deg, #2a1f0e 0%, #1a1612 50%, #0e1a18 100%)",
+                borderTop: "1px solid rgba(200,184,122,0.25)",
+                borderBottom: "1px solid rgba(200,184,122,0.25)",
+                padding: "3rem 2rem",
+                textAlign: "center",
+              }}
+            >
+              <div style={{ maxWidth: "640px", margin: "0 auto" }}>
+                <p
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                    fontSize: "0.68rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.25em",
+                    color: "#c8b87a",
+                    marginBottom: "0.6rem",
+                  }}
+                >
+                  A Connected Duology
+                </p>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "1.2rem",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <div style={{ height: "1px", width: "3rem", backgroundColor: "rgba(200,184,122,0.4)" }} />
+                  <span
+                    style={{
+                      fontFamily: "'Bebas Neue', Impact, sans-serif",
+                      fontSize: "1.6rem",
+                      letterSpacing: "0.12em",
+                      color: "#f0ece0",
+                    }}
+                  >
+                    The Alex &amp; Nathan Series
+                  </span>
+                  <div style={{ height: "1px", width: "3rem", backgroundColor: "rgba(200,184,122,0.4)" }} />
+                </div>
+                <p
+                  style={{
+                    fontFamily: "'Lora', Georgia, serif",
+                    fontSize: "0.92rem",
+                    lineHeight: 1.85,
+                    color: "#c8c0a8",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  <em>Alex Was Here</em> and <em>Nathan Was Gone</em> are two halves of the same story — told first through Nathan's eyes, then through Alex's. Each novel stands on its own, but reading them in order reveals the full picture of a friendship that refuses to let go.
+                </p>
+                <p
+                  style={{
+                    fontFamily: "'Raleway', sans-serif",
+                    fontSize: "0.72rem",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.14em",
+                    color: "#c8b87a",
+                  }}
+                >
+                  Recommended reading order: Book 1 → Book 2
+                </p>
+              </div>
+            </div>
+          )}
+        </>
       ))}
 
       {/* Footer CTA */}

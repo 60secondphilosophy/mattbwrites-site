@@ -15,8 +15,8 @@ const BOOK_ALEX = "/images/real-alex-cover.webp";
 const BOOK_BACK = "/images/real-back-cover.webp";
 const DARK_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/dark-texture-bg-3vgmafUFFg7xrx6tiNQNoa.webp";
 const STARS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/stars-bg-5LsJLVi2j8QAtergCaUGJD.webp";
-const AUTHOR_PHOTO = "/images/real-author-photo.png";
-const SUBSTACK_IMG = "/images/hardly-a-clear-view.png";
+const AUTHOR_PHOTO = "/manus-storage/real-author-photo_8263ad32.png";
+const SUBSTACK_IMG = "/manus-storage/hardly-a-clear-view_b9d1985a.png";
 
 const testimonials = [
   {

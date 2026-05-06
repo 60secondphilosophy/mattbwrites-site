@@ -412,6 +412,107 @@ export default function About() {
         </div>
       </section>
 
+      {/* ===== CONTACT ===== */}
+      <section
+        style={{
+          backgroundColor: "#1a1916",
+          backgroundImage: "radial-gradient(ellipse at 50% 100%, rgba(200,184,122,0.07) 0%, transparent 65%)",
+          padding: "5rem 1.5rem",
+          textAlign: "center",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.72rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.22em",
+            color: "#c8b87a",
+            marginBottom: "0.6rem",
+          }}
+        >
+          Get in Touch
+        </p>
+        <h2
+          style={{
+            fontFamily: "'Bebas Neue', Impact, sans-serif",
+            fontSize: "clamp(2.4rem, 6vw, 4rem)",
+            letterSpacing: "0.06em",
+            color: "#f0ece0",
+            marginBottom: "0.5rem",
+            lineHeight: 1,
+          }}
+        >
+          Say Hello
+        </h2>
+        <div
+          style={{
+            width: "2.5rem",
+            height: "2px",
+            backgroundColor: "#c8b87a",
+            margin: "0 auto 1.75rem",
+          }}
+        />
+        <p
+          style={{
+            fontFamily: "'Lora', Georgia, serif",
+            fontSize: "1rem",
+            lineHeight: 1.85,
+            color: "#c8c0a8",
+            maxWidth: "480px",
+            margin: "0 auto 2.5rem",
+          }}
+        >
+          Questions, thoughts on the books, errors you spotted, or just want to return some value — the inbox is open.
+        </p>
+        <a
+          href="mailto:matt@mattbwrites.com"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.6rem",
+            backgroundColor: "transparent",
+            color: "#f0ece0",
+            border: "1px solid #c8b87a",
+            fontFamily: "'Raleway', sans-serif",
+            fontWeight: 700,
+            fontSize: "0.88rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.14em",
+            padding: "0.9rem 2.4rem",
+            textDecoration: "none",
+            transition: "background-color 0.2s, color 0.2s, transform 0.15s",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = "#c8b87a";
+            e.currentTarget.style.color = "#1a1916";
+            e.currentTarget.style.transform = "translateY(-2px)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "transparent";
+            e.currentTarget.style.color = "#f0ece0";
+            e.currentTarget.style.transform = "translateY(0)";
+          }}
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          matt@mattbwrites.com
+        </a>
+        <p
+          style={{
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.72rem",
+            color: "#666",
+            marginTop: "1.25rem",
+            letterSpacing: "0.04em",
+          }}
+        >
+          matt@mattbwrites.com
+        </p>
+      </section>
+
       {/* ===== FOOTER ===== */}
       <footer
         style={{

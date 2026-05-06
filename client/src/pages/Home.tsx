@@ -1151,7 +1151,7 @@ export default function Home() {
           ✍ Short Stories on Substack
         </a>
         <a
-          href="mailto:60secondphilosophy@gmail.com"
+          href="mailto:matt@mattbwrites.com"
           style={{
             fontFamily: "'Raleway', sans-serif",
             fontSize: "0.85rem",
@@ -1161,7 +1161,7 @@ export default function Home() {
             marginBottom: "0.75rem",
           }}
         >
-          60secondphilosophy@gmail.com
+          matt@mattbwrites.com
         </a>
         <div
           style={{

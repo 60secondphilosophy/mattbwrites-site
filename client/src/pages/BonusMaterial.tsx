@@ -15,7 +15,7 @@ const BONUS_ITEMS = [
     id: "enoch-bonus",
     title: "We Are Icarus",
     description:
-      "This e-book contains a short side story I wrote shortly after finishing We Are Icarus. It also contains an essay explaining the connections between We Are Icarus and other classic works of literature.",
+      "This e-book contains a short side story I wrote shortly after finishing We Are Icarus. It also contains an essay explaining the connections between We Are Icarus and classic works of literature.",
     image: "/images/enoch-cover.webp",
     downloadUrl: "https://dl.bookfunnel.com/rqwb477nyr",
     buttonText: "Download",

@@ -5,9 +5,10 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import ValueForValue from "./pages/ValueForValue";
 import About from "./pages/About";
+import ValueForValue from "./pages/ValueForValue";
 import Books from "./pages/Books";
+import BonusMaterial from "./pages/BonusMaterial";
 
 function Router() {
   return (
@@ -16,6 +17,7 @@ function Router() {
       <Route path={"/value-for-value"} component={ValueForValue} />
       <Route path={"/about"} component={About} />
       <Route path={"/books"} component={Books} />
+      <Route path={"/bonus"} component={BonusMaterial} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

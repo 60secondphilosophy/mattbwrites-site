@@ -137,6 +137,24 @@ export default function Home() {
             >
               Value for Value
             </a>
+            <a
+              href="/bonus"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Bonus Material
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -277,6 +295,20 @@ export default function Home() {
               }}
             >
               Value for Value
+            </a>
+            <a
+              href="/bonus"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Bonus Material
             </a>
           </div>
         )}
@@ -648,9 +680,7 @@ export default function Home() {
               Both We Are Icarus and Alex Was Here have bonus e-books with extra scenes, commentary and more. Click the button below to access!
             </p>
             <a
-            href="https://ko-fi.com/mattbenjamin"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/bonus"
             style={{
               display: "inline-block",
               backgroundColor: "#1a1a1a",
@@ -667,7 +697,7 @@ export default function Home() {
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
             >
-              Extra Content
+              View Bonus Material
             </a>
           </div>
         </div>

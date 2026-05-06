@@ -37,18 +37,9 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const handleSignUp = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-    }
-  };
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -585,74 +576,53 @@ export default function Home() {
             fontWeight: 600,
             fontSize: "1.75rem",
             color: "#1a1a1a",
-            marginBottom: "1.5rem",
+            marginBottom: "0.5rem",
             letterSpacing: "0.02em",
           }}
         >
           Subscribe to My Newsletter
         </h2>
-        {submitted ? (
-          <p
-            style={{
-              fontFamily: "'Lora', Georgia, serif",
-              fontSize: "1rem",
-              color: "#555",
-            }}
-          >
-            Thanks for submitting!
-          </p>
-        ) : (
-          <form
-            onSubmit={handleSignUp}
-            style={{
-              maxWidth: "600px",
-              margin: "0 auto",
-              display: "flex",
-              flexDirection: "column",
-              gap: "0.5rem",
-            }}
-          >
-            <input
-              type="email"
-              placeholder="Enter your email here"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              style={{
-                width: "100%",
-                padding: "0.75rem 1rem",
-                border: "1px solid #c0b898",
-                backgroundColor: "#f8f4ea",
-                fontFamily: "'Lora', Georgia, serif",
-                fontSize: "0.9rem",
-                color: "#444",
-                outline: "none",
-                boxSizing: "border-box",
-              }}
-            />
-            <button
-              type="submit"
-              style={{
-                width: "100%",
-                padding: "0.75rem",
-                backgroundColor: "#1a1a1a",
-                color: "#ffffff",
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 600,
-                fontSize: "0.8rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-                border: "none",
-                cursor: "pointer",
-                transition: "background-color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
-            >
-              Sign Up
-            </button>
-          </form>
-        )}
+        <div
+          style={{
+            width: "2.5rem",
+            height: "2px",
+            backgroundColor: "#c8b87a",
+            margin: "0 auto 1.25rem",
+          }}
+        />
+        <p
+          style={{
+            fontFamily: "'Lora', Georgia, serif",
+            fontSize: "0.92rem",
+            color: "#555",
+            marginBottom: "1.75rem",
+            lineHeight: 1.7,
+          }}
+        >
+          Get updates on new books, audiobooks, and ideas straight to your inbox.
+        </p>
+        <a
+          href="https://matt-benjamin-z0yd2c.subscribepage.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            backgroundColor: "#1a1a1a",
+            color: "#ffffff",
+            fontFamily: "'Raleway', sans-serif",
+            fontWeight: 600,
+            fontSize: "0.82rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.12em",
+            padding: "0.8rem 2.5rem",
+            textDecoration: "none",
+            transition: "background-color 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
+        >
+          Sign Up
+        </a>
       </section>
 
       {/* ===== ABOUT SECTION ===== */}

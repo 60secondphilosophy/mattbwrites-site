@@ -16,6 +16,7 @@ const BOOK_BACK = "/manus-storage/real-back-cover_4fa7ecc5.webp";
 const DARK_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/dark-texture-bg-3vgmafUFFg7xrx6tiNQNoa.webp";
 const STARS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/stars-bg-5LsJLVi2j8QAtergCaUGJD.webp";
 const AUTHOR_PHOTO = "/manus-storage/real-author-photo_58062485.png";
+const SUBSTACK_IMG = "/manus-storage/hardly-a-clear-view_99e3d835.png";
 
 const testimonials = [
   {
@@ -172,6 +173,20 @@ export default function Home() {
               onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
             >
               <Instagram size={18} />
+            </a>
+            {/* Substack icon */}
+            <a
+              href="https://hardlyaclearview.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#333", transition: "color 0.2s", display: "flex", alignItems: "center" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#FF6719")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+              title="Short Stories on Substack"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+              </svg>
             </a>
           </div>
         </div>
@@ -1127,26 +1142,25 @@ function WorkItem({
           </div>
         </div>
       ) : isSubstack ? (
-        <div
+        <img
+          src={SUBSTACK_IMG}
+          alt={title}
           style={{
             width: "180px",
             height: "220px",
-            backgroundColor: "#f8f4ea",
-            border: "1px solid #d8d0b8",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "0.6rem",
+            objectFit: "cover",
+            boxShadow: "3px 3px 12px rgba(0,0,0,0.2)",
+            transition: "transform 0.2s, box-shadow 0.2s",
           }}
-        >
-          {/* Substack S logo */}
-          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="56" height="56" rx="8" fill="#FF6719"/>
-            <path d="M12 16h32v4H12zM12 24h32v4H12zM12 32v16l16-8 16 8V32H12z" fill="white"/>
-          </svg>
-          <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: "0.8rem", color: "#555", textAlign: "center", padding: "0 0.5rem" }}>Short Stories</span>
-        </div>
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLImageElement).style.transform = "translateY(-4px)";
+            (e.currentTarget as HTMLImageElement).style.boxShadow = "5px 8px 20px rgba(0,0,0,0.3)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLImageElement).style.transform = "translateY(0)";
+            (e.currentTarget as HTMLImageElement).style.boxShadow = "3px 3px 12px rgba(0,0,0,0.2)";
+          }}
+        />
       ) : (
         <img
           src={image}

@@ -13,7 +13,7 @@ const BOOK_ICARUS = "/manus-storage/real-icarus-cover_aca2f9ee.webp";
 const BOOK_ALEX = "/manus-storage/real-alex-cover_d1c7227d.webp";
 const BOOK_BACK = "/manus-storage/real-back-cover_4fa7ecc5.webp";
 const BOOK_NATHAN = "/manus-storage/nathan-was-gone_81a69e91.webp";
-const KOFI_URL = "https://ko-fi.com/mattbenjamin";
+const KOFI_URL = "https://ko-fi.com/mattbenjamin"; // fallback
 
 interface ReviewQuote {
   text: string;
@@ -36,6 +36,7 @@ interface Book {
   reviews: ReviewQuote[];
   dark?: boolean;
   goodreadsUrl: string;
+  kofiUrl: string;
 }
 
 const BOOKS: Book[] = [
@@ -50,6 +51,7 @@ const BOOKS: Book[] = [
     cover: BOOK_ICARUS,
     dark: true,
     goodreadsUrl: "https://www.goodreads.com/book/show/208887598-we-are-icarus",
+    kofiUrl: "https://ko-fi.com/s/2d5d9d477e",
     description:
       "It's the perfect world — be anyone, do anything. The only cost? Your humanity.\n\nIcarus believes he's happy. And why wouldn't he be? Each day in the COR, a virtual world indistinguishable from reality, was exactly what he wanted. No sickness, no hunger, no pain — only thrilling experiences and unfettered pleasures.\n\nBut when an unexpected meeting with a beautiful woman leaves him questioning if he can ever be truly happy inside the COR, he begins a quest for answers. Answers the government, his friends, and even parts of himself will do anything to keep hidden.\n\nTo stop him from escaping into the Void.\n\nFor fans of 1984, Brave New World, and The Matrix.",
     reviews: [
@@ -83,6 +85,7 @@ const BOOKS: Book[] = [
     cover: BOOK_ALEX,
     dark: false,
     goodreadsUrl: "https://www.goodreads.com/book/show/240073588-alex-was-here",
+    kofiUrl: "https://ko-fi.com/s/0c8805122a",
     description:
       "Two teens. A rock in the woods. And Chop Suey.\n\nFifteen-year-old Nathan Green is homeschooled and restless, pedaling through the woods in search of something, anything, to give his summer meaning. Then he finds Alex, who pulls Nathan into her world — vibrant, chaotic, hurt.\n\nTheir friendship saves Nathan's summer, but can it save Alex's life?\n\nAlex Was Here faithfully chronicles the nostalgia of teenage years in the early 2000s and the sort of friendship that never gives up.",
     reviews: [
@@ -116,6 +119,7 @@ const BOOKS: Book[] = [
     cover: BOOK_NATHAN,
     dark: true,
     goodreadsUrl: "https://www.goodreads.com/book/show/247253585-nathan-was-gone",
+    kofiUrl: "https://ko-fi.com/s/de0b484212",
     description:
       "The story continues — years later, from Alex's point of view.\n\nNathan Was Gone takes a heartbreaking turn, set years after Alex Was Here ends. Alex and Nathan are no longer teenagers. They're young adults trying to find their own paths in the world while struggling to keep what they have between them the same — even with so much distance separating them.\n\nA story of hurt, friendship, strength, and forgiveness. Best read after Alex Was Here, though it can stand on its own.",
     reviews: [
@@ -148,6 +152,7 @@ const BOOKS: Book[] = [
     cover: BOOK_BACK,
     dark: false,
     goodreadsUrl: "https://www.goodreads.com/book/show/218697262-back-to-the-beginning",
+    kofiUrl: "https://ko-fi.com/s/6036e7da97",
     description:
       "What does it mean to live well?\n\nIn a world where modern distractions cloud our sense of purpose, Back to the Beginning offers a refreshing return to the timeless wisdom found in the early chapters of Genesis. This book delves into the foundational aspects of the human experience — creativity, work, rest, and community.\n\nDrawing from the creation narrative, Back to the Beginning challenges readers to look beyond moral imperatives and discover a way of life that aligns with God's original design for humanity. Whether you are seeking to enhance your spiritual journey, find balance in your daily life, or understand your place in the larger story of creation, this book offers a perspective that is both ancient and profoundly relevant today.",
     reviews: [
@@ -295,7 +300,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
             />
           </div>
           <a
-            href={KOFI_URL}
+            href={book.kofiUrl}
             target="_blank"
             rel="noopener noreferrer"
             style={{

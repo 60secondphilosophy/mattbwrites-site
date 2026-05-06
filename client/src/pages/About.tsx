@@ -5,7 +5,7 @@
  * Fonts: Bebas Neue (display), Oswald (headings), Lora (body)
  */
 
-const AUTHOR_PHOTO = "/manus-storage/real-author-photo_58062485.png";
+const AUTHOR_PHOTO = "/images/real-author-photo.png";
 
 export default function About() {
   return (

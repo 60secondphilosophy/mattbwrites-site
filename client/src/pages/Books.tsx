@@ -9,10 +9,10 @@
 
 import { Link } from "wouter";
 
-const BOOK_ICARUS = "/manus-storage/real-icarus-cover_aca2f9ee.webp";
-const BOOK_ALEX = "/manus-storage/real-alex-cover_d1c7227d.webp";
-const BOOK_BACK = "/manus-storage/real-back-cover_4fa7ecc5.webp";
-const BOOK_NATHAN = "/manus-storage/nathan-was-gone_81a69e91.webp";
+const BOOK_ICARUS = "/images/real-icarus-cover.webp";
+const BOOK_ALEX = "/images/real-alex-cover.webp";
+const BOOK_BACK = "/images/real-back-cover.webp";
+const BOOK_NATHAN = "/images/nathan-was-gone.webp";
 const KOFI_URL = "https://ko-fi.com/mattbenjamin"; // fallback
 
 interface ReviewQuote {

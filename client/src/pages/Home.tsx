@@ -10,13 +10,13 @@ import { Search, Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-re
 
 // Asset URLs
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/hero-bg-mKAqVJrmfDdPHnvrhGS5jz.webp";
-const BOOK_ICARUS = "/manus-storage/real-icarus-cover_aca2f9ee.webp";
-const BOOK_ALEX = "/manus-storage/real-alex-cover_d1c7227d.webp";
-const BOOK_BACK = "/manus-storage/real-back-cover_4fa7ecc5.webp";
+const BOOK_ICARUS = "/images/real-icarus-cover.webp";
+const BOOK_ALEX = "/images/real-alex-cover.webp";
+const BOOK_BACK = "/images/real-back-cover.webp";
 const DARK_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/dark-texture-bg-3vgmafUFFg7xrx6tiNQNoa.webp";
 const STARS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/stars-bg-5LsJLVi2j8QAtergCaUGJD.webp";
-const AUTHOR_PHOTO = "/manus-storage/real-author-photo_58062485.png";
-const SUBSTACK_IMG = "/manus-storage/hardly-a-clear-view_99e3d835.png";
+const AUTHOR_PHOTO = "/images/real-author-photo.png";
+const SUBSTACK_IMG = "/images/hardly-a-clear-view.png";
 
 const testimonials = [
   {
@@ -402,7 +402,7 @@ export default function Home() {
             />
             {/* Nathan Was Gone — right-center */}
             <img
-              src="/manus-storage/nathan-was-gone_81a69e91.webp"
+              src="/images/nathan-was-gone.webp"
               alt="Nathan Was Gone"
               style={{
                 width: "115px",
@@ -907,7 +907,7 @@ export default function Home() {
           />
           {/* Nathan Was Gone */}
           <WorkItem
-            image="/manus-storage/nathan-was-gone_81a69e91.webp"
+            image="/images/nathan-was-gone.webp"
             title="Nathan Was Gone"
             buttonLabel="Free Download"
             buttonHref="https://ko-fi.com/mattbenjamin"

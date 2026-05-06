@@ -154,7 +154,7 @@ export default function Home() {
             </div>
             {/* Social Icons */}
             <a
-              href="https://www.youtube.com/@60secondphilosophy"
+              href="https://www.youtube.com/@60SPH"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#333", transition: "color 0.2s" }}
@@ -718,7 +718,7 @@ export default function Home() {
                 textAlign: "justify",
               }}
             >
-              Matt Benjamin studied the humanities in college and grad school. Because of that, he now owns a lawncare business. But when he's not mowing lawns (and sometimes when he is), he is crafting tales that force his readers to think deeply. Drawing from his studies of ancient philosophy and the Bible, Matt writes to challenge the assumptions we make about modern life with stories that are true, good, and beautiful. His debut novel "We Are Icarus" explores where our technological society might be heading, and what we can do to prevent the consequences of our current trajectory. Matt also runs a YouTube channel with over 20K subscribers: 60 Second Philosophy.
+              Matt Benjamin studied the humanities in college and grad school. Because of that, he now owns a lawncare business. But when he's not mowing lawns (and sometimes when he is), he is crafting tales that force his readers to think deeply. Drawing from his studies of ancient philosophy and the Bible, Matt writes to challenge the assumptions we make about modern life with stories that are true, good, and beautiful. His debut novel "We Are Icarus" explores where our technological society might be heading, and what we can do to prevent the consequences of our current trajectory. Matt also runs a YouTube channel with over 20K subscribers: <a href="https://www.youtube.com/@60SPH" target="_blank" rel="noopener noreferrer" style={{ color: "#c8b87a", textDecoration: "none" }}>60 Second Philosophy</a>.
             </p>
           </div>
         </div>
@@ -790,7 +790,14 @@ export default function Home() {
             isYoutube
             title="Youtube"
             buttonLabel="My Channel"
-            buttonHref="https://www.youtube.com/@60secondphilosophy"
+            buttonHref="https://www.youtube.com/@60SPH"
+          />
+          {/* Short Stories */}
+          <WorkItem
+            isSubstack
+            title="Short Stories"
+            buttonLabel="Read on Substack"
+            buttonHref="https://hardlyaclearview.substack.com/"
           />
         </div>
       </section>
@@ -975,12 +982,32 @@ export default function Home() {
             fontSize: "0.82rem",
             color: "#FF5E5B",
             textDecoration: "none",
-            marginBottom: "1rem",
+            marginBottom: "0.5rem",
             letterSpacing: "0.04em",
             fontWeight: 600,
           }}
         >
           ☕ Get all books free on Ko-fi
+        </a>
+        <br />
+        <a
+          href="https://hardlyaclearview.substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.82rem",
+            color: "#FF6719",
+            textDecoration: "none",
+            marginBottom: "1rem",
+            letterSpacing: "0.04em",
+            fontWeight: 600,
+          }}
+        >
+          ✍ Short Stories on Substack
         </a>
         <a
           href="mailto:60secondphilosophy@gmail.com"
@@ -1045,12 +1072,14 @@ function WorkItem({
   buttonLabel,
   buttonHref,
   isYoutube,
+  isSubstack,
 }: {
   image?: string;
   title: string;
   buttonLabel: string;
   buttonHref: string;
   isYoutube?: boolean;
+  isSubstack?: boolean;
 }) {
   return (
     <div
@@ -1096,6 +1125,27 @@ function WorkItem({
               }}
             />
           </div>
+        </div>
+      ) : isSubstack ? (
+        <div
+          style={{
+            width: "180px",
+            height: "220px",
+            backgroundColor: "#f8f4ea",
+            border: "1px solid #d8d0b8",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "0.6rem",
+          }}
+        >
+          {/* Substack S logo */}
+          <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="56" height="56" rx="8" fill="#FF6719"/>
+            <path d="M12 16h32v4H12zM12 24h32v4H12zM12 32v16l16-8 16 8V32H12z" fill="white"/>
+          </svg>
+          <span style={{ fontFamily: "'Lora', Georgia, serif", fontSize: "0.8rem", color: "#555", textAlign: "center", padding: "0 0.5rem" }}>Short Stories</span>
         </div>
       ) : (
         <img

@@ -280,10 +280,10 @@ export default function ValueForValue() {
                 margin: "0 auto 1.25rem",
               }}
             >
-              {/* Coin icon */}
+              {/* Dollar sign icon */}
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c8b87a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v2m0 8v2M9.5 9.5C9.5 8.12 10.62 7 12 7s2.5 1.12 2.5 2.5c0 2.5-5 2.5-5 5C9.5 15.88 10.62 17 12 17s2.5-1.12 2.5-2.5"/>
+                <line x1="12" y1="1" x2="12" y2="23"/>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
               </svg>
             </div>
             <h2

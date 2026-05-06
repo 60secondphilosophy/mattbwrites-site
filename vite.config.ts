@@ -205,7 +205,13 @@ function vitePluginStorageProxy(): Plugin {
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime(), vitePluginManusDebugCollector(), vitePluginStorageProxy()];
 
+// When building for GitHub Pages, set VITE_BASE_PATH env var to the repo name
+// e.g. VITE_BASE_PATH=/mattbwrites-site  (only needed if NOT using a custom domain)
+// If you point a custom domain (mattbwrites.com) at GitHub Pages, leave it unset.
+const base = process.env.VITE_BASE_PATH ?? "/";
+
 export default defineConfig({
+  base,
   plugins,
   resolve: {
     alias: {

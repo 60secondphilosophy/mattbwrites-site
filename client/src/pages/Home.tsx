@@ -198,7 +198,7 @@ export default function Home() {
               <Youtube size={18} />
             </a>
             <a
-              href="https://www.instagram.com/mattbwrites"
+              href="https://www.instagram.com/mattbwrites/"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: "#333", transition: "color 0.2s" }}
@@ -1182,7 +1182,7 @@ export default function Home() {
             <Youtube size={18} />
           </a>
           <a
-            href="https://www.instagram.com/mattbwrites"
+            href="https://www.instagram.com/mattbwrites/"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#555", transition: "color 0.2s" }}

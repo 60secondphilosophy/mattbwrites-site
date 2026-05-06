@@ -313,7 +313,7 @@ export default function Home() {
               marginBottom: "0.75rem",
             }}
           >
-            Official Website of Author and YouTube Creator
+            Official Website of Author
           </p>
           <h1
             style={{

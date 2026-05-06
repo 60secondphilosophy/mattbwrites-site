@@ -149,7 +149,7 @@ export default function About() {
               marginBottom: "0.4rem",
             }}
           >
-            Author & YouTube Creator
+            Author
           </p>
           <h1
             style={{

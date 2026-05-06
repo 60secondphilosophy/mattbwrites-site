@@ -544,20 +544,22 @@ export default function Home() {
               Both We Are Icarus and Alex Was Here have bonus e-books with extra scenes, commentary and more. Click the button below to access!
             </p>
             <a
-              href="#"
-              style={{
-                display: "inline-block",
-                backgroundColor: "#1a1a1a",
-                color: "#ffffff",
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 600,
-                fontSize: "0.78rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                padding: "0.65rem 1.75rem",
-                textDecoration: "none",
-                transition: "background-color 0.2s",
-              }}
+            href="https://ko-fi.com/mattbenjamin"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "inline-block",
+              backgroundColor: "#1a1a1a",
+              color: "#ffffff",
+              fontFamily: "'Raleway', sans-serif",
+              fontWeight: 600,
+              fontSize: "0.78rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              padding: "0.65rem 1.75rem",
+              textDecoration: "none",
+              transition: "background-color 0.2s",
+            }}
               onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
               onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
             >
@@ -796,22 +798,22 @@ export default function Home() {
           <WorkItem
             image={BOOK_ALEX}
             title="Alex Was Here"
-            buttonLabel="Amazon Page"
-            buttonHref="#"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
           />
           {/* We Are Icarus */}
           <WorkItem
             image={BOOK_ICARUS}
             title="We Are Icarus"
-            buttonLabel="More Info"
-            buttonHref="#"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
           />
           {/* Back to the Beginning */}
           <WorkItem
             image={BOOK_BACK}
             title="Back to the Beginning"
-            buttonLabel="Amazon Page"
-            buttonHref="#"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
           />
           {/* YouTube */}
           <WorkItem
@@ -990,6 +992,26 @@ export default function Home() {
           textAlign: "center",
         }}
       >
+        {/* Ko-fi footer link */}
+        <a
+          href="https://ko-fi.com/mattbenjamin"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.82rem",
+            color: "#FF5E5B",
+            textDecoration: "none",
+            marginBottom: "1rem",
+            letterSpacing: "0.04em",
+            fontWeight: 600,
+          }}
+        >
+          ☕ Get all books free on Ko-fi
+        </a>
         <a
           href="mailto:60secondphilosophy@gmail.com"
           style={{
@@ -1138,8 +1160,8 @@ function WorkItem({
       </p>
       <a
         href={buttonHref}
-        target={isYoutube ? "_blank" : undefined}
-        rel={isYoutube ? "noopener noreferrer" : undefined}
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
           display: "inline-block",
           border: "1px solid #555",

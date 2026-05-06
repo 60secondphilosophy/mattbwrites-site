@@ -10,12 +10,12 @@ import { Search, Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-re
 
 // Asset URLs
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/hero-bg-mKAqVJrmfDdPHnvrhGS5jz.webp";
-const BOOK_ICARUS = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/book-we-are-icarus-KG8bBbwLZxcPboSzzoKhQ6.webp";
-const BOOK_ALEX = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/book-alex-was-here-eYyfXLC3wfh9VoagaaHAkV.webp";
-const BOOK_BACK = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/book-back-to-beginning-3aKdndV5eEeTsLAiM3fdFy.webp";
+const BOOK_ICARUS = "/manus-storage/real-icarus-cover_aca2f9ee.webp";
+const BOOK_ALEX = "/manus-storage/real-alex-cover_d1c7227d.webp";
+const BOOK_BACK = "/manus-storage/real-back-cover_4fa7ecc5.webp";
 const DARK_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/dark-texture-bg-3vgmafUFFg7xrx6tiNQNoa.webp";
 const STARS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/stars-bg-5LsJLVi2j8QAtergCaUGJD.webp";
-const AUTHOR_PHOTO = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/author-photo-oXyXnfuYJPBNPmZvkioN5w.webp";
+const AUTHOR_PHOTO = "/manus-storage/real-author-photo_58062485.png";
 
 const testimonials = [
   {

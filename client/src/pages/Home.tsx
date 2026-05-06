@@ -366,49 +366,70 @@ export default function Home() {
             flexWrap: "wrap",
           }}
         >
-          {/* Stacked book covers */}
-          <div style={{ position: "relative", width: "200px", height: "260px", flexShrink: 0 }}>
+          {/* Stacked book covers — four books fanned */}
+          <div style={{ position: "relative", width: "260px", height: "270px", flexShrink: 0 }}>
+            {/* Back to the Beginning — far left, rotated back */}
             <img
               src={BOOK_BACK}
               alt="Back to the Beginning"
               style={{
-                width: "130px",
-                height: "190px",
+                width: "115px",
+                height: "175px",
                 objectFit: "cover",
                 position: "absolute",
                 left: "0",
-                top: "30px",
+                top: "45px",
                 boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
-                transform: "rotate(-5deg)",
+                transform: "rotate(-8deg)",
+                zIndex: 1,
               }}
             />
+            {/* Alex Was Here — left-center */}
             <img
               src={BOOK_ALEX}
               alt="Alex Was Here"
               style={{
-                width: "130px",
-                height: "190px",
+                width: "115px",
+                height: "175px",
                 objectFit: "cover",
                 position: "absolute",
-                right: "0",
-                top: "10px",
+                left: "45px",
+                top: "20px",
                 boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
-                transform: "rotate(3deg)",
+                transform: "rotate(-3deg)",
+                zIndex: 2,
               }}
             />
+            {/* Nathan Was Gone — right-center */}
+            <img
+              src="/manus-storage/nathan-was-gone_81a69e91.webp"
+              alt="Nathan Was Gone"
+              style={{
+                width: "115px",
+                height: "175px",
+                objectFit: "cover",
+                position: "absolute",
+                right: "45px",
+                top: "20px",
+                boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
+                transform: "rotate(3deg)",
+                zIndex: 2,
+              }}
+            />
+            {/* We Are Icarus — far right, front and center */}
             <img
               src={BOOK_ICARUS}
               alt="We Are Icarus"
               style={{
-                width: "140px",
-                height: "205px",
+                width: "125px",
+                height: "190px",
                 objectFit: "cover",
                 position: "absolute",
-                left: "50%",
-                top: "50px",
-                transform: "translateX(-50%) rotate(-1deg)",
-                boxShadow: "8px 8px 28px rgba(0,0,0,0.8)",
-                zIndex: 2,
+                right: "0",
+                top: "40px",
+                boxShadow: "8px 8px 28px rgba(0,0,0,0.85)",
+                transform: "rotate(7deg)",
+                zIndex: 3,
               }}
             />
           </div>

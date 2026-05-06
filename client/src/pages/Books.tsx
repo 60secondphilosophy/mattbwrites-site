@@ -690,7 +690,7 @@ export default function Books() {
                     color: "#c8b87a",
                   }}
                 >
-                  Recommended reading order: Book 1 → Book 2
+                  Recommended reading order: <em>Alex Was Here</em> → <em>Nathan Was Gone</em>
                 </p>
               </div>
             </div>

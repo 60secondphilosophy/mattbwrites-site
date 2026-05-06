@@ -267,7 +267,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== WE ARE ICARUS FEATURE ===== */}
+      {/* ===== FREE DOWNLOAD FOCAL POINT ===== */}
       <section
         style={{
           backgroundImage: `url(${DARK_BG})`,
@@ -277,7 +277,7 @@ export default function Home() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: "340px",
+          minHeight: "420px",
           position: "relative",
         }}
       >
@@ -285,7 +285,7 @@ export default function Home() {
           style={{
             position: "absolute",
             inset: 0,
-            backgroundColor: "rgba(30, 28, 25, 0.72)",
+            backgroundColor: "rgba(22, 20, 16, 0.78)",
           }}
         />
         <div
@@ -295,68 +295,156 @@ export default function Home() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            gap: "3rem",
-            maxWidth: "900px",
+            gap: "3.5rem",
+            maxWidth: "960px",
             margin: "0 auto",
-            padding: "2rem 1.5rem",
+            padding: "3rem 1.5rem",
             flexWrap: "wrap",
           }}
         >
-          {/* Book Cover */}
-          <div
-            style={{
-              flexShrink: 0,
-              boxShadow: "8px 8px 30px rgba(0,0,0,0.6)",
-              transform: "rotate(-2deg)",
-            }}
-          >
+          {/* Stacked book covers */}
+          <div style={{ position: "relative", width: "200px", height: "260px", flexShrink: 0 }}>
+            <img
+              src={BOOK_BACK}
+              alt="Back to the Beginning"
+              style={{
+                width: "130px",
+                height: "190px",
+                objectFit: "cover",
+                position: "absolute",
+                left: "0",
+                top: "30px",
+                boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
+                transform: "rotate(-5deg)",
+              }}
+            />
+            <img
+              src={BOOK_ALEX}
+              alt="Alex Was Here"
+              style={{
+                width: "130px",
+                height: "190px",
+                objectFit: "cover",
+                position: "absolute",
+                right: "0",
+                top: "10px",
+                boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
+                transform: "rotate(3deg)",
+              }}
+            />
             <img
               src={BOOK_ICARUS}
-              alt="We Are Icarus book cover"
-              style={{ width: "160px", height: "240px", objectFit: "cover", display: "block" }}
+              alt="We Are Icarus"
+              style={{
+                width: "140px",
+                height: "205px",
+                objectFit: "cover",
+                position: "absolute",
+                left: "50%",
+                top: "50px",
+                transform: "translateX(-50%) rotate(-1deg)",
+                boxShadow: "8px 8px 28px rgba(0,0,0,0.8)",
+                zIndex: 2,
+              }}
             />
           </div>
-          {/* Text */}
-          <div style={{ textAlign: "center", color: "#e8e0c8" }}>
-            <h2
+
+          {/* Text + CTA */}
+          <div style={{ textAlign: "center", color: "#e8e0c8", maxWidth: "420px" }}>
+            <p
               style={{
-                fontFamily: "'Lora', Georgia, serif",
-                fontStyle: "italic",
-                fontWeight: 400,
-                fontSize: "2rem",
-                color: "#e8e0c8",
-                marginBottom: "1.25rem",
-              }}
-            >
-              We Are Icarus
-            </h2>
-            <a
-              href="#"
-              style={{
-                display: "inline-block",
-                backgroundColor: "transparent",
-                color: "#e8e0c8",
-                border: "1px solid #e8e0c8",
                 fontFamily: "'Raleway', sans-serif",
-                fontWeight: 600,
+                fontWeight: 400,
                 fontSize: "0.78rem",
                 textTransform: "uppercase",
-                letterSpacing: "0.12em",
-                padding: "0.6rem 2rem",
-                textDecoration: "none",
-                transition: "background-color 0.2s, color 0.2s",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#e8e0c8";
-                e.currentTarget.style.color = "#1a1a1a";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = "#e8e0c8";
+                letterSpacing: "0.2em",
+                color: "#c8b87a",
+                marginBottom: "0.6rem",
               }}
             >
-              Order Now
+              All Books &amp; Audio Versions
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Bebas Neue', Impact, sans-serif",
+                fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
+                lineHeight: 1,
+                letterSpacing: "0.04em",
+                color: "#e8e0c8",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Free to Download
+            </h2>
+            <div
+              style={{
+                width: "2.5rem",
+                height: "2px",
+                backgroundColor: "#c8b87a",
+                margin: "0 auto 1.1rem",
+              }}
+            />
+            <p
+              style={{
+                fontFamily: "'Lora', Georgia, serif",
+                fontSize: "0.92rem",
+                lineHeight: 1.75,
+                color: "#c8c0a8",
+                marginBottom: "1.75rem",
+              }}
+            >
+              Every novel, every audiobook — yours at no cost. Support the work on Ko-fi if you enjoy it, but it's never required.
+            </p>
+            <a
+              href="https://ko-fi.com/mattbenjamin"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                backgroundColor: "#FF5E5B",
+                color: "#ffffff",
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.88rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                padding: "0.85rem 2.25rem",
+                textDecoration: "none",
+                border: "none",
+                boxShadow: "0 4px 20px rgba(255,94,91,0.45)",
+                transition: "background-color 0.2s, box-shadow 0.2s, transform 0.15s",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#e84e4b";
+                e.currentTarget.style.boxShadow = "0 6px 28px rgba(255,94,91,0.6)";
+                e.currentTarget.style.transform = "translateY(-2px)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "#FF5E5B";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(255,94,91,0.45)";
+                e.currentTarget.style.transform = "translateY(0)";
+              }}
+            >
+              {/* Ko-fi cup icon */}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.5 3H5.5C4.12 3 3 4.12 3 5.5v9C3 17.43 5.57 20 8.5 20h7c2.93 0 5.5-2.57 5.5-5.5V5.5C21 4.12 19.88 3 18.5 3zM19 14.5c0 1.93-1.57 3.5-3.5 3.5h-7C6.57 18 5 16.43 5 14.5V5.5C5 5.22 5.22 5 5.5 5h13c.28 0 .5.22.5.5V14.5z"/>
+                <path d="M9 8c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm4 0c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1z"/>
+              </svg>
+              Get Free Books on Ko-fi
             </a>
+            <p
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.72rem",
+                color: "#888",
+                marginTop: "0.9rem",
+                letterSpacing: "0.04em",
+              }}
+            >
+              ko-fi.com/mattbenjamin
+            </p>
           </div>
         </div>
       </section>

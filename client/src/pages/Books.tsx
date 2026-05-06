@@ -35,6 +35,7 @@ interface Book {
   description: string;
   reviews: ReviewQuote[];
   dark?: boolean;
+  goodreadsUrl: string;
 }
 
 const BOOKS: Book[] = [
@@ -48,6 +49,7 @@ const BOOKS: Book[] = [
     ratingCount: 34,
     cover: BOOK_ICARUS,
     dark: true,
+    goodreadsUrl: "https://www.goodreads.com/book/show/208887598-we-are-icarus",
     description:
       "It's the perfect world — be anyone, do anything. The only cost? Your humanity.\n\nIcarus believes he's happy. And why wouldn't he be? Each day in the COR, a virtual world indistinguishable from reality, was exactly what he wanted. No sickness, no hunger, no pain — only thrilling experiences and unfettered pleasures.\n\nBut when an unexpected meeting with a beautiful woman leaves him questioning if he can ever be truly happy inside the COR, he begins a quest for answers. Answers the government, his friends, and even parts of himself will do anything to keep hidden.\n\nTo stop him from escaping into the Void.\n\nFor fans of 1984, Brave New World, and The Matrix.",
     reviews: [
@@ -80,6 +82,7 @@ const BOOKS: Book[] = [
     ratingCount: 10,
     cover: BOOK_ALEX,
     dark: false,
+    goodreadsUrl: "https://www.goodreads.com/book/show/240073588-alex-was-here",
     description:
       "Two teens. A rock in the woods. And Chop Suey.\n\nFifteen-year-old Nathan Green is homeschooled and restless, pedaling through the woods in search of something, anything, to give his summer meaning. Then he finds Alex, who pulls Nathan into her world — vibrant, chaotic, hurt.\n\nTheir friendship saves Nathan's summer, but can it save Alex's life?\n\nAlex Was Here faithfully chronicles the nostalgia of teenage years in the early 2000s and the sort of friendship that never gives up.",
     reviews: [
@@ -112,6 +115,7 @@ const BOOKS: Book[] = [
     ratingCount: 5,
     cover: BOOK_NATHAN,
     dark: true,
+    goodreadsUrl: "https://www.goodreads.com/book/show/247253585-nathan-was-gone",
     description:
       "The story continues — years later, from Alex's point of view.\n\nNathan Was Gone takes a heartbreaking turn, set years after Alex Was Here ends. Alex and Nathan are no longer teenagers. They're young adults trying to find their own paths in the world while struggling to keep what they have between them the same — even with so much distance separating them.\n\nA story of hurt, friendship, strength, and forgiveness. Best read after Alex Was Here, though it can stand on its own.",
     reviews: [
@@ -143,6 +147,7 @@ const BOOKS: Book[] = [
     ratingCount: 7,
     cover: BOOK_BACK,
     dark: false,
+    goodreadsUrl: "https://www.goodreads.com/book/show/218697262-back-to-the-beginning",
     description:
       "What does it mean to live well?\n\nIn a world where modern distractions cloud our sense of purpose, Back to the Beginning offers a refreshing return to the timeless wisdom found in the early chapters of Genesis. This book delves into the foundational aspects of the human experience — creativity, work, rest, and community.\n\nDrawing from the creation narrative, Back to the Beginning challenges readers to look beyond moral imperatives and discover a way of life that aligns with God's original design for humanity. Whether you are seeking to enhance your spiritual journey, find balance in your daily life, or understand your place in the larger story of creation, this book offers a perspective that is both ancient and profoundly relevant today.",
     reviews: [
@@ -323,6 +328,33 @@ function BookSection({ book, index }: { book: Book; index: number }) {
             ☕ Free Download on Ko-fi
           </a>
           <StarRating rating={book.rating} count={book.ratingCount} />
+          <a
+            href={book.goodreadsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              fontFamily: "'Raleway', sans-serif",
+              fontSize: "0.72rem",
+              fontWeight: 600,
+              textTransform: "uppercase",
+              letterSpacing: "0.08em",
+              color: book.dark ? "#c8b87a" : "#8b6914",
+              textDecoration: "none",
+              borderBottom: `1px solid ${book.dark ? "rgba(200,184,122,0.4)" : "rgba(139,105,20,0.4)"}`,
+              paddingBottom: "1px",
+              transition: "color 0.2s, border-color 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.color = book.dark ? "#e8d898" : "#5a3d00";
+              e.currentTarget.style.borderBottomColor = book.dark ? "rgba(232,216,152,0.8)" : "rgba(90,61,0,0.8)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.color = book.dark ? "#c8b87a" : "#8b6914";
+              e.currentTarget.style.borderBottomColor = book.dark ? "rgba(200,184,122,0.4)" : "rgba(139,105,20,0.4)";
+            }}
+          >
+            View on Goodreads ↗
+          </a>
         </div>
 
         {/* Content */}

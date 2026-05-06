@@ -445,6 +445,25 @@ export default function Home() {
             >
               ko-fi.com/mattbenjamin
             </p>
+            <a
+              href="/value-for-value"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.72rem",
+                color: "#c8b87a",
+                textDecoration: "none",
+                letterSpacing: "0.06em",
+                marginTop: "0.4rem",
+                display: "inline-block",
+                borderBottom: "1px solid rgba(200,184,122,0.4)",
+                paddingBottom: "1px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#e8d898")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#c8b87a")}
+            >
+              Learn about the Value for Value model →
+            </a>
           </div>
         </div>
       </section>

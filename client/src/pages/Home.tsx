@@ -83,27 +83,24 @@ export default function Home() {
             }}
             className="hidden md:flex"
           >
-            {["Home", "Extras", "About", "Blog", "We Are Icarus"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "0.78rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: "#333",
-                  textDecoration: "none",
-                  padding: "0.25rem 0.6rem",
-                  transition: "color 0.2s",
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#666")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              href="/value-for-value"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Value for Value
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -203,23 +200,20 @@ export default function Home() {
               gap: "0.75rem",
             }}
           >
-            {["Home", "Extras", "About", "Blog", "We Are Icarus"].map((item) => (
-              <a
-                key={item}
-                href="#"
-                style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: 500,
-                  fontSize: "0.85rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: "#333",
-                  textDecoration: "none",
-                }}
-              >
-                {item}
-              </a>
-            ))}
+            <a
+              href="/value-for-value"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Value for Value
+            </a>
           </div>
         )}
       </nav>

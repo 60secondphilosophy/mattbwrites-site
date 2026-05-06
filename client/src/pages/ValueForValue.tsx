@@ -476,7 +476,7 @@ export default function ValueForValue() {
             margin: "0 auto 1.75rem",
           }}
         >
-          Curious about what Value for Value looks like in practice? The V4V Exchange Substack documents the model as it unfolds — the thinking behind it, what gets returned, and what it reveals about the relationship between creators and their audience.
+          Curious about what Value for Value looks like in practice? The V4V Experiment Substack documents the model as it unfolds — the thinking behind it, what gets returned, and what it reveals about the relationship between creators and their audience.
         </p>
         <a
           href="https://v4ve.substack.com/"

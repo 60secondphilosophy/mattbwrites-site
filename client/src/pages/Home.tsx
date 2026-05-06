@@ -84,6 +84,24 @@ export default function Home() {
             className="hidden md:flex"
           >
             <a
+              href="/about"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              About
+            </a>
+            <a
               href="/value-for-value"
               style={{
                 fontFamily: "'Raleway', sans-serif",
@@ -200,6 +218,20 @@ export default function Home() {
               gap: "0.75rem",
             }}
           >
+            <a
+              href="/about"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              About
+            </a>
             <a
               href="/value-for-value"
               style={{
@@ -748,6 +780,27 @@ export default function Home() {
             >
               Matt Benjamin studied the humanities in college and grad school. Because of that, he now owns a lawncare business. But when he's not mowing lawns (and sometimes when he is), he is crafting tales that force his readers to think deeply. Drawing from his studies of ancient philosophy and the Bible, Matt writes to challenge the assumptions we make about modern life with stories that are true, good, and beautiful. His debut novel "We Are Icarus" explores where our technological society might be heading, and what we can do to prevent the consequences of our current trajectory. Matt also runs a YouTube channel with over 20K subscribers: <a href="https://www.youtube.com/@60SPH" target="_blank" rel="noopener noreferrer" style={{ color: "#c8b87a", textDecoration: "none" }}>60 Second Philosophy</a>.
             </p>
+            <a
+              href="/about"
+              style={{
+                display: "inline-block",
+                marginTop: "1.25rem",
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.75rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "#c8b87a",
+                textDecoration: "none",
+                borderBottom: "1px solid rgba(200,184,122,0.4)",
+                paddingBottom: "1px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#e8d898")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#c8b87a")}
+            >
+              Full Bio →
+            </a>
           </div>
         </div>
       </section>

@@ -42,23 +42,59 @@ export default function ValueForValue() {
           >
             Matt Benjamin
           </a>
-          <a
-            href="/"
-            style={{
-              fontFamily: "'Raleway', sans-serif",
-              fontWeight: 500,
-              fontSize: "0.78rem",
-              textTransform: "uppercase",
-              letterSpacing: "0.08em",
-              color: "#555",
-              textDecoration: "none",
-              transition: "color 0.2s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "#1a1a1a")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
-          >
-            ← Back to Home
-          </a>
+          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+            <a
+              href="/about"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                color: "#555",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+            >
+              About
+            </a>
+            <a
+              href="/books"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                color: "#555",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+            >
+              Books
+            </a>
+            <a
+              href="/"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                color: "#555",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#1a1a1a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+            >
+              ← Home
+            </a>
+          </div>
         </div>
       </nav>
 

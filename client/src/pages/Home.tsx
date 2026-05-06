@@ -102,6 +102,24 @@ export default function Home() {
               About
             </a>
             <a
+              href="/books"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Books
+            </a>
+            <a
               href="/value-for-value"
               style={{
                 fontFamily: "'Raleway', sans-serif",
@@ -231,6 +249,20 @@ export default function Home() {
               }}
             >
               About
+            </a>
+            <a
+              href="/books"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Books
             </a>
             <a
               href="/value-for-value"
@@ -849,6 +881,13 @@ export default function Home() {
           <WorkItem
             image={BOOK_ALEX}
             title="Alex Was Here"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
+          />
+          {/* Nathan Was Gone */}
+          <WorkItem
+            image="/manus-storage/nathan-was-gone_81a69e91.webp"
+            title="Nathan Was Gone"
             buttonLabel="Free Download"
             buttonHref="https://ko-fi.com/mattbenjamin"
           />

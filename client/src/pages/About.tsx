@@ -63,6 +63,23 @@ export default function About() {
               Value for Value
             </a>
             <a
+              href="/books"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                color: "#555",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+            >
+              Books
+            </a>
+            <a
               href="/"
               style={{
                 fontFamily: "'Raleway', sans-serif",

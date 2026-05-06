@@ -7,6 +7,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import ValueForValue from "./pages/ValueForValue";
 import About from "./pages/About";
+import Books from "./pages/Books";
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/value-for-value"} component={ValueForValue} />
       <Route path={"/about"} component={About} />
+      <Route path={"/books"} component={Books} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

@@ -67,7 +67,7 @@ const BOOKS: Book[] = [
       },
       {
         text: "This dystopian science fiction novel gave me vibes along the lines of Black Mirror, Equilibrium, and The Matrix as well as The Giver and 1984. I foresee this being an incredible option for book clubs.",
-        reviewer: "Vanessa Symington",
+        reviewer: "Vanessa S.",
         stars: 5,
       },
     ],
@@ -96,12 +96,12 @@ const BOOKS: Book[] = [
       },
       {
         text: "Alex Was Here is a beautifully written coming of age story that I devoured. Matt Benjamin has done a remarkable job at creating an emotional page-turner. It is clear that this was written with passion — there was a layer to the writing that was obvious Matt poured parts of his soul into it.",
-        reviewer: "Vanessa Symington",
+        reviewer: "Vanessa S.",
         stars: 5,
       },
       {
         text: "A beautifully written coming-of-age story that's full of heart… and a touch of heartache. Matt Benjamin has clearly poured his heart and soul into this story, and it shows on every page.",
-        reviewer: "Abigail Hammond",
+        reviewer: "Abigail H.",
         stars: 5,
       },
     ],
@@ -125,7 +125,7 @@ const BOOKS: Book[] = [
     reviews: [
       {
         text: "I tore through this ARC after reading Alex Was Here and being completely pulled into the world of Alex and Nate. Matt Benjamin once again does an amazing job keeping the emotion front and center in his writing. I'm not sure what he has up his sleeve next, but I can't wait to find out.",
-        reviewer: "Marci Crawford",
+        reviewer: "Marci C.",
         stars: 5,
       },
       {
@@ -135,7 +135,7 @@ const BOOKS: Book[] = [
       },
       {
         text: "What a beautiful read. Filled with emotion, it is a journey of hurt, friendship, strength, and forgiveness. I was heartbroken at chapter one and went on an emotional roller coaster throughout.",
-        reviewer: "Vanessa Symington",
+        reviewer: "Vanessa S.",
         stars: 5,
       },
     ],
@@ -158,17 +158,17 @@ const BOOKS: Book[] = [
     reviews: [
       {
         text: "Matt Benjamin has a talent for producing short sentences and paragraphs that condense super complex ideas into small statements. He does not waste your time. It's a must read for anyone looking to dip their toes into the topic of humans being created and/or the start of Genesis.",
-        reviewer: "Stephen Page",
+        reviewer: "Stephen P.",
         stars: 5,
       },
       {
         text: "This book was excellent from start to finish! Every point is communicated in a way that is easy to understand and grasp. The message thoroughly resonated with me. I'll be recommending this one to everyone I know!",
-        reviewer: "Abigail Hammond",
+        reviewer: "Abigail H.",
         stars: 5,
       },
       {
         text: "Very insightful and well written. I had a hard time putting it down. It definitely left me thinking for days after.",
-        reviewer: "Anne McCoy",
+        reviewer: "Anne M.",
         stars: 5,
       },
     ],

@@ -167,9 +167,13 @@ export default function Blog() {
         {!loading && !error && posts.length > 0 && (
           <div className="max-w-3xl mx-auto space-y-8">
             {posts.map((post) => (
-              <article
+              <a
                 key={post.id}
-                className="pb-8 border-b border-border last:border-b-0 hover:bg-secondary/20 transition-colors p-4 rounded-lg"
+                href={post.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block pb-8 border-b border-border last:border-b-0 hover:bg-secondary/20 transition-colors p-4 rounded-lg no-underline"
+                style={{ textDecoration: "none", color: "inherit" }}
               >
                 <div className="flex flex-col gap-3">
                   <div className="flex items-start justify-between gap-4">
@@ -182,14 +186,7 @@ export default function Blog() {
                           letterSpacing: "0.02em",
                         }}
                       >
-                        <a
-                          href={post.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:underline"
-                        >
-                          {post.title}
-                        </a>
+                        {post.title}
                       </h2>
                       <p className="text-sm text-muted-foreground mb-3">
                         {formatDate(post.pubDate)}
@@ -205,18 +202,15 @@ export default function Blog() {
                   )}
 
                   <div className="pt-2">
-                    <a
-                      href={post.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <span
                       className="inline-block text-sm font-semibold text-accent hover:text-accent/80 transition-colors"
                       style={{ color: "#c8b87a" }}
                     >
                       Read on Substack →
-                    </a>
+                    </span>
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         )}

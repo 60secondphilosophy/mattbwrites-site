@@ -8,6 +8,7 @@
  */
 
 import { Link } from "wouter";
+import Header from "../components/Header";
 
 const BOOK_ICARUS = "/images/real-icarus-cover.webp";
 const BOOK_ALEX = "/images/real-alex-cover.webp";
@@ -383,7 +384,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
           {/* Title */}
           <h2
             style={{
-              fontFamily: "'Bebas Neue', cursive",
+              fontFamily: "'Bebas Neue', sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 400,
               letterSpacing: "0.04em",
@@ -478,61 +479,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
 export default function Books() {
   return (
     <div style={{ minHeight: "100vh", background: "#f5f0e8" }}>
-      {/* Nav */}
-      <nav
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-          background: "rgba(245,240,232,0.97)",
-          backdropFilter: "blur(8px)",
-          borderBottom: "1px solid rgba(0,0,0,0.08)",
-          padding: "0.85rem 2rem",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Link href="/">
-          <span
-            style={{
-              fontFamily: "'Bebas Neue', cursive",
-              fontSize: "1.4rem",
-              letterSpacing: "0.08em",
-              color: "#2a1f14",
-              textDecoration: "none",
-              cursor: "pointer",
-            }}
-          >
-            Matt Benjamin
-          </span>
-        </Link>
-        <div style={{ display: "flex", gap: "0.25rem", alignItems: "center" }}>
-          {[
-            { label: "About", href: "/about" },
-            { label: "Books", href: "/books" },
-            { label: "Value for Value", href: "/value-for-value" },
-          ].map((item) => (
-            <Link key={item.href} href={item.href}>
-              <span
-                style={{
-                  fontFamily: "'Raleway', sans-serif",
-                  fontWeight: item.href === "/books" ? 700 : 500,
-                  fontSize: "0.78rem",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: item.href === "/books" ? "#8b6914" : "#333",
-                  textDecoration: "none",
-                  padding: "0.25rem 0.6rem",
-                  cursor: "pointer",
-                }}
-              >
-                {item.label}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero */}
       <div
@@ -540,6 +487,7 @@ export default function Books() {
           background: "#2a1f14",
           padding: "4rem 2rem 3.5rem",
           textAlign: "center",
+          marginTop: "56px",
         }}
       >
         <p
@@ -557,7 +505,7 @@ export default function Books() {
         </p>
         <h1
           style={{
-            fontFamily: "'Bebas Neue', cursive",
+            fontFamily: "'Bebas Neue', sans-serif",
             fontSize: "clamp(3rem, 8vw, 6rem)",
             fontWeight: 400,
             letterSpacing: "0.06em",

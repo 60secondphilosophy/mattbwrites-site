@@ -7,7 +7,6 @@
 
 import { useState } from "react";
 import { Search, Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
-import Header from "../components/Header";
 
 // Asset URLs
 const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/hero-bg-mKAqVJrmfDdPHnvrhGS5jz.webp";
@@ -41,6 +40,7 @@ const testimonials = [
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const prevTestimonial = () => {
     setCurrentTestimonial((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
@@ -52,230 +52,1010 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#f0ece0" }}>
-      <Header />
 
-      {/* Right side: Social + Search */}
-      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", position: "fixed", top: "1rem", right: "1.5rem", zIndex: 101 }}>
-        {/* Search */}
+      {/* ===== NAVIGATION ===== */}
+      <nav
+        style={{
+          backgroundColor: "#f0ece0",
+          borderBottom: "1px solid #d8d0b8",
+          position: "sticky",
+          top: 0,
+          zIndex: 100,
+        }}
+      >
         <div
           style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+            padding: "0 1.5rem",
             display: "flex",
             alignItems: "center",
-            border: "1px solid #c0b898",
-            backgroundColor: "#f8f4ea",
-            padding: "0.25rem 0.75rem",
-            gap: "0.4rem",
+            justifyContent: "space-between",
+            height: "56px",
           }}
         >
-          <Search size={14} color="#888" />
-          <input
-            type="search"
-            placeholder="Search..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+          {/* Nav Links */}
+          <div
             style={{
-              border: "none",
-              background: "transparent",
-              outline: "none",
-              fontFamily: "'Raleway', sans-serif",
-              fontSize: "0.78rem",
-              color: "#555",
-              width: "120px",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.25rem",
             }}
-          />
+            className="hidden md:flex"
+          >
+            <a
+              href="/about"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              About
+            </a>
+            <a
+              href="/books"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Books
+            </a>
+            <a
+              href="/value-for-value"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Value for Value
+            </a>
+            <a
+              href="/bonus"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Bonus Material
+            </a>
+            <a
+              href="/blog"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Blog
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            style={{
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: "0.5rem",
+              color: "#333",
+            }}
+          >
+            <div style={{ width: "22px", height: "2px", backgroundColor: "#333", marginBottom: "5px" }} />
+            <div style={{ width: "22px", height: "2px", backgroundColor: "#333", marginBottom: "5px" }} />
+            <div style={{ width: "22px", height: "2px", backgroundColor: "#333" }} />
+          </button>
+
+          {/* Right side: Social + Search */}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            {/* Search */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                border: "1px solid #c0b898",
+                backgroundColor: "#f8f4ea",
+                padding: "0.25rem 0.75rem",
+                gap: "0.4rem",
+              }}
+            >
+              <Search size={14} color="#888" />
+              <input
+                type="search"
+                placeholder="Search..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                style={{
+                  border: "none",
+                  background: "transparent",
+                  outline: "none",
+                  fontFamily: "'Raleway', sans-serif",
+                  fontSize: "0.78rem",
+                  color: "#555",
+                  width: "120px",
+                }}
+              />
+            </div>
+            {/* Social Icons */}
+            <a
+              href="https://www.youtube.com/@60SPH"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#333", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c00")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              <Youtube size={18} />
+            </a>
+            <a
+              href="https://www.instagram.com/mattbwrites/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#333", transition: "color 0.2s" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c13584")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              <Instagram size={18} />
+            </a>
+            {/* Substack icon */}
+            <a
+              href="https://hardlyaclearview.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "#333", transition: "color 0.2s", display: "flex", alignItems: "center" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#FF6719")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+              title="Short Stories on Substack"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
+              </svg>
+            </a>
+          </div>
         </div>
-        {/* Social Icons */}
-        <a
-          href="https://www.youtube.com/@60SPH"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#333", transition: "color 0.2s" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#c00")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
-        >
-          <Youtube size={18} />
-        </a>
-        <a
-          href="https://www.instagram.com/mattbwrites/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#333", transition: "color 0.2s" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#c13584")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
-        >
-          <Instagram size={18} />
-        </a>
-        {/* Substack icon */}
-        <a
-          href="https://hardlyaclearview.substack.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: "#333", transition: "color 0.2s", display: "flex", alignItems: "center" }}
-          onMouseEnter={(e) => (e.currentTarget.style.color = "#FF6719")}
-          onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
-          title="Short Stories on Substack"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/>
-          </svg>
-        </a>
-      </div>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div
+            style={{
+              backgroundColor: "#f0ece0",
+              borderTop: "1px solid #d8d0b8",
+              padding: "1rem 1.5rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "0.75rem",
+            }}
+          >
+            <a
+              href="/about"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              About
+            </a>
+            <a
+              href="/books"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Books
+            </a>
+            <a
+              href="/value-for-value"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Value for Value
+            </a>
+            <a
+              href="/bonus"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Bonus Material
+            </a>
+            <a
+              href="/blog"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Blog
+            </a>
+          </div>
+        )}
+      </nav>
 
       {/* ===== HERO SECTION ===== */}
       <section
         style={{
-          backgroundImage: `url('${HERO_BG}')`,
+          backgroundImage: `url(${HERO_BG})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          padding: "6rem 1.5rem",
+          backgroundColor: "#f0ece0",
           textAlign: "center",
+          padding: "5rem 1.5rem 4rem",
           position: "relative",
-          marginTop: "56px",
         }}
       >
         <div
           style={{
             position: "absolute",
             inset: 0,
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            backgroundColor: "rgba(240, 236, 224, 0.55)",
           }}
         />
         <div style={{ position: "relative", zIndex: 1 }}>
           <p
             style={{
               fontFamily: "'Raleway', sans-serif",
-              fontSize: "0.85rem",
-              fontWeight: 600,
+              fontWeight: 400,
+              fontSize: "0.8rem",
               textTransform: "uppercase",
-              letterSpacing: "0.12em",
-              color: "#d4af37",
-              marginBottom: "1rem",
+              letterSpacing: "0.18em",
+              color: "#555",
+              marginBottom: "0.75rem",
             }}
           >
             Official Website of Author
           </p>
           <h1
             style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(3rem, 8vw, 5.5rem)",
-              fontWeight: 400,
+              fontFamily: "'Bebas Neue', Impact, sans-serif",
+              fontSize: "clamp(4rem, 12vw, 9rem)",
+              lineHeight: 0.95,
               letterSpacing: "0.04em",
-              color: "#fff",
-              lineHeight: 1,
-              margin: "0 0 2rem 0",
-            }}
-          >
-            MATT BENJAMIN
-          </h1>
-          <p
-            style={{
-              fontFamily: "'Lora', serif",
-              fontSize: "1.1rem",
-              fontStyle: "italic",
-              color: "#e8e0cc",
-              maxWidth: "600px",
+              color: "#1a1a1a",
               margin: "0 auto",
-              lineHeight: 1.6,
+              maxWidth: "900px",
             }}
           >
-            Exploring the intersection of technology, humanity, and meaning through dystopian fiction and philosophical inquiry.
-          </p>
+            Matt Benjamin
+          </h1>
         </div>
       </section>
 
-      {/* ===== FEATURED BOOKS ===== */}
-      <section style={{ backgroundColor: "#f0ece0", padding: "5rem 1.5rem" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-          <h2
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              fontWeight: 400,
-              letterSpacing: "0.04em",
-              color: "#333",
-              textAlign: "center",
-              marginBottom: "3rem",
-            }}
-          >
-            Featured Works
-          </h2>
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-              gap: "2rem",
-            }}
-          >
-            {[BOOK_ICARUS, BOOK_ALEX, BOOK_BACK].map((cover, idx) => (
-              <div
-                key={idx}
-                style={{
-                  boxShadow: "0 20px 60px rgba(0,0,0,0.25), 0 8px 20px rgba(0,0,0,0.12)",
-                  borderRadius: "4px",
-                  overflow: "hidden",
-                }}
-              >
-                <img src={cover} alt={`Book ${idx + 1}`} style={{ width: "100%", display: "block" }} />
-              </div>
-            ))}
+      {/* ===== FREE DOWNLOAD FOCAL POINT ===== */}
+      <section
+        style={{
+          backgroundImage: `url(${DARK_BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundColor: "#2d2d2d",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "420px",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(22, 20, 16, 0.78)",
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "3.5rem",
+            maxWidth: "960px",
+            margin: "0 auto",
+            padding: "3rem 1.5rem",
+            flexWrap: "wrap",
+          }}
+        >
+          {/* Stacked book covers — four books fanned */}
+          <div style={{ position: "relative", width: "260px", height: "270px", flexShrink: 0 }}>
+            {/* Back to the Beginning — far left, rotated back */}
+            <img
+              src={BOOK_BACK}
+              alt="Back to the Beginning"
+              style={{
+                width: "115px",
+                height: "175px",
+                objectFit: "cover",
+                position: "absolute",
+                left: "0",
+                top: "45px",
+                boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
+                transform: "rotate(-8deg)",
+                zIndex: 1,
+              }}
+            />
+            {/* Alex Was Here — left-center */}
+            <img
+              src={BOOK_ALEX}
+              alt="Alex Was Here"
+              style={{
+                width: "115px",
+                height: "175px",
+                objectFit: "cover",
+                position: "absolute",
+                left: "45px",
+                top: "20px",
+                boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
+                transform: "rotate(-3deg)",
+                zIndex: 2,
+              }}
+            />
+            {/* Nathan Was Gone — right-center */}
+            <img
+              src="/images/nathan-was-gone.webp"
+              alt="Nathan Was Gone"
+              style={{
+                width: "115px",
+                height: "175px",
+                objectFit: "cover",
+                position: "absolute",
+                right: "45px",
+                top: "20px",
+                boxShadow: "6px 6px 20px rgba(0,0,0,0.7)",
+                transform: "rotate(3deg)",
+                zIndex: 2,
+              }}
+            />
+            {/* We Are Icarus — far right, front and center */}
+            <img
+              src={BOOK_ICARUS}
+              alt="We Are Icarus"
+              style={{
+                width: "125px",
+                height: "190px",
+                objectFit: "cover",
+                position: "absolute",
+                right: "0",
+                top: "40px",
+                boxShadow: "8px 8px 28px rgba(0,0,0,0.85)",
+                transform: "rotate(7deg)",
+                zIndex: 3,
+              }}
+            />
           </div>
 
-          <div style={{ textAlign: "center", marginTop: "3rem" }}>
-            <a
-              href="/books"
+          {/* Text + CTA */}
+          <div style={{ textAlign: "center", color: "#e8e0c8", maxWidth: "420px" }}>
+            <p
               style={{
-                display: "inline-block",
-                background: "#333",
-                color: "#fff",
-                fontFamily: "'Oswald', sans-serif",
-                fontSize: "0.85rem",
-                fontWeight: 600,
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 400,
+                fontSize: "0.78rem",
                 textTransform: "uppercase",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.2em",
+                color: "#c8b87a",
+                marginBottom: "0.6rem",
+              }}
+            >
+              All Books &amp; Audio Versions
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Bebas Neue', Impact, sans-serif",
+                fontSize: "clamp(2.8rem, 6vw, 4.5rem)",
+                lineHeight: 1,
+                letterSpacing: "0.04em",
+                color: "#e8e0c8",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Free to Download
+            </h2>
+            <div
+              style={{
+                width: "2.5rem",
+                height: "2px",
+                backgroundColor: "#c8b87a",
+                margin: "0 auto 1.1rem",
+              }}
+            />
+            <p
+              style={{
+                fontFamily: "'Lora', Georgia, serif",
+                fontSize: "0.92rem",
+                lineHeight: 1.75,
+                color: "#c8c0a8",
+                marginBottom: "1.75rem",
+              }}
+            >
+              Every novel, every audiobook — yours at no cost. Support the work on Ko-fi if you enjoy it, but it's never required.
+            </p>
+            <a
+              href="https://ko-fi.com/mattbenjamin"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.6rem",
+                backgroundColor: "#FF5E5B",
+                color: "#ffffff",
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 700,
+                fontSize: "0.88rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                padding: "0.85rem 2.25rem",
                 textDecoration: "none",
-                padding: "0.75rem 2rem",
-                borderRadius: "2px",
-                transition: "background 0.2s, transform 0.2s",
+                border: "none",
+                boxShadow: "0 4px 20px rgba(255,94,91,0.45)",
+                transition: "background-color 0.2s, box-shadow 0.2s, transform 0.15s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#555";
+                e.currentTarget.style.backgroundColor = "#e84e4b";
+                e.currentTarget.style.boxShadow = "0 6px 28px rgba(255,94,91,0.6)";
                 e.currentTarget.style.transform = "translateY(-2px)";
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#333";
+                e.currentTarget.style.backgroundColor = "#FF5E5B";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(255,94,91,0.45)";
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              View All Books
+              {/* Ko-fi cup icon */}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.5 3H5.5C4.12 3 3 4.12 3 5.5v9C3 17.43 5.57 20 8.5 20h7c2.93 0 5.5-2.57 5.5-5.5V5.5C21 4.12 19.88 3 18.5 3zM19 14.5c0 1.93-1.57 3.5-3.5 3.5h-7C6.57 18 5 16.43 5 14.5V5.5C5 5.22 5.22 5 5.5 5h13c.28 0 .5.22.5.5V14.5z"/>
+                <path d="M9 8c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm4 0c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1z"/>
+              </svg>
+              Get Free Books on Ko-fi
+            </a>
+            <p
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.72rem",
+                color: "#888",
+                marginTop: "0.9rem",
+                letterSpacing: "0.04em",
+              }}
+            >
+              ko-fi.com/mattbenjamin
+            </p>
+            <a
+              href="/value-for-value"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.72rem",
+                color: "#c8b87a",
+                textDecoration: "none",
+                letterSpacing: "0.06em",
+                marginTop: "0.4rem",
+                display: "inline-block",
+                borderBottom: "1px solid rgba(200,184,122,0.4)",
+                paddingBottom: "1px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#e8d898")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#c8b87a")}
+            >
+              Learn about the Value for Value model →
             </a>
           </div>
         </div>
       </section>
 
-      {/* ===== TESTIMONIALS ===== */}
-      <section style={{ backgroundColor: "#2d2d2d", padding: "5rem 1.5rem", color: "#e8e0cc" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <h2
+      {/* ===== FREE EXTRAS SECTION ===== */}
+      <section
+        style={{
+          backgroundColor: "#f0ece0",
+          padding: "4rem 1.5rem",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "900px",
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            gap: "3rem",
+            flexWrap: "wrap",
+            justifyContent: "center",
+          }}
+        >
+          {/* Stacked book images */}
+          <div style={{ position: "relative", width: "180px", height: "220px", flexShrink: 0 }}>
+            <img
+              src={BOOK_ALEX}
+              alt="Alex Was Here book cover"
+              style={{
+                width: "140px",
+                height: "200px",
+                objectFit: "cover",
+                position: "absolute",
+                left: "0",
+                top: "0",
+                boxShadow: "4px 4px 15px rgba(0,0,0,0.25)",
+                transform: "rotate(-4deg)",
+              }}
+            />
+            <img
+              src={BOOK_ICARUS}
+              alt="We Are Icarus book cover"
+              style={{
+                width: "130px",
+                height: "190px",
+                objectFit: "cover",
+                position: "absolute",
+                right: "0",
+                bottom: "0",
+                boxShadow: "4px 4px 15px rgba(0,0,0,0.25)",
+                transform: "rotate(3deg)",
+              }}
+            />
+          </div>
+          {/* Text */}
+          <div style={{ maxWidth: "480px" }}>
+            <p
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 400,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.12em",
+                color: "#888",
+                marginBottom: "0.25rem",
+              }}
+            >
+              Download
+            </p>
+            <h2
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: "2.5rem",
+                color: "#1a1a1a",
+                marginBottom: "0.5rem",
+              }}
+            >
+              Free Extras!
+            </h2>
+            <div
+              style={{
+                width: "2.5rem",
+                height: "2px",
+                backgroundColor: "#c8b87a",
+                marginBottom: "1rem",
+              }}
+            />
+            <p
+              style={{
+                fontFamily: "'Lora', Georgia, serif",
+                fontSize: "0.95rem",
+                lineHeight: 1.7,
+                color: "#444",
+                marginBottom: "1.5rem",
+              }}
+            >
+              Both We Are Icarus and Alex Was Here have bonus e-books with extra scenes, commentary and more. Click the button below to access!
+            </p>
+            <a
+            href="/bonus"
             style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "clamp(2rem, 5vw, 3.5rem)",
-              fontWeight: 400,
-              letterSpacing: "0.04em",
-              color: "#d4af37",
-              textAlign: "center",
-              marginBottom: "3rem",
+              display: "inline-block",
+              backgroundColor: "#1a1a1a",
+              color: "#ffffff",
+              fontFamily: "'Raleway', sans-serif",
+              fontWeight: 600,
+              fontSize: "0.78rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.1em",
+              padding: "0.65rem 1.75rem",
+              textDecoration: "none",
+              transition: "background-color 0.2s",
             }}
-          >
-            What Readers Say
-          </h2>
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
+            >
+              View Bonus Material
+            </a>
+          </div>
+        </div>
+      </section>
 
+      {/* ===== NEWSLETTER SECTION ===== */}
+      <section
+        style={{
+          backgroundColor: "#ede8d8",
+          padding: "3.5rem 1.5rem",
+          textAlign: "center",
+          borderTop: "1px solid #d8d0b8",
+          borderBottom: "1px solid #d8d0b8",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "'Oswald', sans-serif",
+            fontWeight: 600,
+            fontSize: "1.75rem",
+            color: "#1a1a1a",
+            marginBottom: "0.5rem",
+            letterSpacing: "0.02em",
+          }}
+        >
+          Subscribe to My Newsletter
+        </h2>
+        <div
+          style={{
+            width: "2.5rem",
+            height: "2px",
+            backgroundColor: "#c8b87a",
+            margin: "0 auto 1.25rem",
+          }}
+        />
+        <p
+          style={{
+            fontFamily: "'Lora', Georgia, serif",
+            fontSize: "0.92rem",
+            color: "#555",
+            marginBottom: "1.75rem",
+            lineHeight: 1.7,
+          }}
+        >
+          Get updates on new books, audiobooks, and ideas straight to your inbox.
+        </p>
+        <a
+          href="https://matt-benjamin-z0yd2c.subscribepage.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-block",
+            backgroundColor: "#1a1a1a",
+            color: "#ffffff",
+            fontFamily: "'Raleway', sans-serif",
+            fontWeight: 600,
+            fontSize: "0.82rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.12em",
+            padding: "0.8rem 2.5rem",
+            textDecoration: "none",
+            transition: "background-color 0.2s",
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
+        >
+          Sign Up
+        </a>
+      </section>
+
+      {/* ===== ABOUT SECTION ===== */}
+      <section
+        style={{
+          backgroundImage: `url(${DARK_BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundColor: "#2d2d2d",
+          position: "relative",
+          minHeight: "420px",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(25, 22, 18, 0.78)",
+          }}
+        />
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "stretch",
+            maxWidth: "1100px",
+            margin: "0 auto",
+            flexWrap: "wrap",
+          }}
+        >
+          {/* Author Photo */}
           <div
             style={{
+              flex: "0 0 45%",
+              minWidth: "280px",
+              overflow: "hidden",
+              maxHeight: "480px",
+            }}
+          >
+            <img
+              src={AUTHOR_PHOTO}
+              alt="Matt Benjamin"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "top center",
+                filter: "sepia(30%) contrast(1.05)",
+                display: "block",
+              }}
+            />
+          </div>
+          {/* Text */}
+          <div
+            style={{
+              flex: "1 1 300px",
+              padding: "3rem 2.5rem",
+              color: "#e8e0c8",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <h2
+              style={{
+                fontFamily: "'Oswald', sans-serif",
+                fontWeight: 700,
+                fontSize: "2.2rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#e8e0c8",
+                marginBottom: "0.75rem",
+                lineHeight: 1.1,
+              }}
+            >
+              About Matt Benjamin
+            </h2>
+            <div
+              style={{
+                width: "2.5rem",
+                height: "2px",
+                backgroundColor: "#c8b87a",
+                marginBottom: "1.25rem",
+              }}
+            />
+            <p
+              style={{
+                fontFamily: "'Lora', Georgia, serif",
+                fontSize: "0.9rem",
+                lineHeight: 1.85,
+                color: "#d8d0b8",
+                textAlign: "justify",
+              }}
+            >
+              Matt Benjamin studied the humanities in college and grad school. Because of that, he now owns a lawncare business. But when he's not mowing lawns (and sometimes when he is), he is crafting tales that force his readers to think deeply. Drawing from his studies of ancient philosophy and the Bible, Matt writes to challenge the assumptions we make about modern life with stories that are true, good, and beautiful. His debut novel "We Are Icarus" explores where our technological society might be heading, and what we can do to prevent the consequences of our current trajectory. Matt also runs a YouTube channel with over 20K subscribers: <a href="https://www.youtube.com/@60SPH" target="_blank" rel="noopener noreferrer" style={{ color: "#c8b87a", textDecoration: "none" }}>60 Second Philosophy</a>.
+            </p>
+            <a
+              href="/about"
+              style={{
+                display: "inline-block",
+                marginTop: "1.25rem",
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.75rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                color: "#c8b87a",
+                textDecoration: "none",
+                borderBottom: "1px solid rgba(200,184,122,0.4)",
+                paddingBottom: "1px",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#e8d898")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#c8b87a")}
+            >
+              Full Bio →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== MATT BENJAMIN'S WORK ===== */}
+      <section
+        style={{
+          backgroundColor: "#f0ece0",
+          padding: "4rem 1.5rem",
+          textAlign: "center",
+        }}
+      >
+        <h2
+          style={{
+            fontFamily: "'Oswald', sans-serif",
+            fontWeight: 700,
+            fontSize: "2rem",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+            color: "#1a1a1a",
+            marginBottom: "0.5rem",
+          }}
+        >
+          Matt Benjamin's Work
+        </h2>
+        <div
+          style={{
+            width: "2.5rem",
+            height: "2px",
+            backgroundColor: "#c8b87a",
+            margin: "0 auto 2.5rem",
+          }}
+        />
+
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "2rem",
+            flexWrap: "wrap",
+            maxWidth: "1000px",
+            margin: "0 auto",
+          }}
+        >
+          {/* Alex Was Here */}
+          <WorkItem
+            image={BOOK_ALEX}
+            title="Alex Was Here"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
+          />
+          {/* Nathan Was Gone */}
+          <WorkItem
+            image="/images/nathan-was-gone.webp"
+            title="Nathan Was Gone"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
+          />
+          {/* We Are Icarus */}
+          <WorkItem
+            image={BOOK_ICARUS}
+            title="We Are Icarus"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
+          />
+          {/* Back to the Beginning */}
+          <WorkItem
+            image={BOOK_BACK}
+            title="Back to the Beginning"
+            buttonLabel="Free Download"
+            buttonHref="https://ko-fi.com/mattbenjamin"
+          />
+          {/* YouTube */}
+          <WorkItem
+            isYoutube
+            title="Youtube"
+            buttonLabel="My Channel"
+            buttonHref="https://www.youtube.com/@60SPH"
+          />
+          {/* Short Stories */}
+          <WorkItem
+            isSubstack
+            title="Short Stories"
+            buttonLabel="Read on Substack"
+            buttonHref="https://hardlyaclearview.substack.com/"
+          />
+        </div>
+      </section>
+
+      {/* ===== TESTIMONIALS ===== */}
+      <section
+        style={{
+          backgroundImage: `url(${STARS_BG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundColor: "#1a1a1a",
+          padding: "4rem 1.5rem",
+          textAlign: "center",
+          position: "relative",
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            backgroundColor: "rgba(15, 14, 12, 0.7)",
+          }}
+        />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <h2
+            style={{
+              fontFamily: "'Oswald', sans-serif",
+              fontWeight: 700,
+              fontSize: "1.8rem",
+              textTransform: "uppercase",
+              letterSpacing: "0.12em",
+              color: "#c8b87a",
+              marginBottom: "0.5rem",
+            }}
+          >
+            What Readers Are Saying
+          </h2>
+          <div
+            style={{
+              width: "2.5rem",
+              height: "2px",
+              backgroundColor: "#c8b87a",
+              margin: "0 auto 2.5rem",
+            }}
+          />
+
+          {/* Testimonial carousel */}
+          <div
+            style={{
+              maxWidth: "680px",
+              margin: "0 auto",
+              position: "relative",
               display: "flex",
               alignItems: "center",
-              gap: "2rem",
-              minHeight: "200px",
+              gap: "1rem",
             }}
           >
             <button
@@ -283,35 +1063,52 @@ export default function Home() {
               style={{
                 background: "none",
                 border: "none",
-                color: "#d4af37",
+                color: "#e8e0c8",
                 cursor: "pointer",
-                fontSize: "2rem",
                 padding: "0.5rem",
+                flexShrink: 0,
+                opacity: 0.7,
+                transition: "opacity 0.2s",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
             >
-              <ChevronLeft size={32} />
+              <ChevronLeft size={24} />
             </button>
 
-            <div style={{ flex: 1, textAlign: "center" }}>
+            <div
+              style={{
+                border: "1px solid rgba(232, 224, 200, 0.4)",
+                padding: "2rem 2.5rem",
+                flex: 1,
+              }}
+            >
               <p
                 style={{
-                  fontFamily: "'Lora', serif",
-                  fontSize: "1.1rem",
+                  fontFamily: "'Lora', Georgia, serif",
                   fontStyle: "italic",
-                  lineHeight: 1.8,
-                  marginBottom: "1.5rem",
+                  fontSize: "0.95rem",
+                  lineHeight: 1.85,
+                  color: "#e8e0c8",
+                  marginBottom: "1rem",
                 }}
               >
-                "{testimonials[currentTestimonial].text}"
+                {testimonials[currentTestimonial].text}
               </p>
+              <div
+                style={{
+                  width: "2rem",
+                  height: "1px",
+                  backgroundColor: "#c8b87a",
+                  margin: "0 auto 0.5rem",
+                }}
+              />
               <p
                 style={{
                   fontFamily: "'Raleway', sans-serif",
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  color: "#d4af37",
+                  fontSize: "0.78rem",
+                  letterSpacing: "0.08em",
+                  color: "#c8b87a",
                 }}
               >
                 {testimonials[currentTestimonial].author}
@@ -323,31 +1120,296 @@ export default function Home() {
               style={{
                 background: "none",
                 border: "none",
-                color: "#d4af37",
+                color: "#e8e0c8",
                 cursor: "pointer",
-                fontSize: "2rem",
                 padding: "0.5rem",
+                flexShrink: 0,
+                opacity: 0.7,
+                transition: "opacity 0.2s",
               }}
+              onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+              onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.7")}
             >
-              <ChevronRight size={32} />
+              <ChevronRight size={24} />
             </button>
+          </div>
+
+          {/* Dots */}
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "0.5rem",
+              marginTop: "1.5rem",
+            }}
+          >
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentTestimonial(i)}
+                style={{
+                  width: "8px",
+                  height: "8px",
+                  borderRadius: "50%",
+                  border: "none",
+                  backgroundColor: i === currentTestimonial ? "#c8b87a" : "rgba(200, 184, 122, 0.35)",
+                  cursor: "pointer",
+                  padding: 0,
+                  transition: "background-color 0.2s",
+                }}
+              />
+            ))}
           </div>
         </div>
       </section>
 
       {/* ===== FOOTER ===== */}
-      <footer style={{ backgroundColor: "#f0ece0", padding: "3rem 1.5rem", textAlign: "center", borderTop: "1px solid #d8d0b8" }}>
+      <footer
+        style={{
+          backgroundColor: "#f0ece0",
+          borderTop: "1px solid #d8d0b8",
+          padding: "2rem 1.5rem",
+          textAlign: "center",
+        }}
+      >
+        {/* Ko-fi footer link */}
+        <a
+          href="https://ko-fi.com/mattbenjamin"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.82rem",
+            color: "#FF5E5B",
+            textDecoration: "none",
+            marginBottom: "0.5rem",
+            letterSpacing: "0.04em",
+            fontWeight: 600,
+          }}
+        >
+          ☕ Get all books free on Ko-fi
+        </a>
+        <br />
+        <a
+          href="https://hardlyaclearview.substack.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.82rem",
+            color: "#FF6719",
+            textDecoration: "none",
+            marginBottom: "1rem",
+            letterSpacing: "0.04em",
+            fontWeight: 600,
+          }}
+        >
+          ✍ Short Stories on Substack
+        </a>
+        <a
+          href="mailto:matt@mattbwrites.com"
+          style={{
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.85rem",
+            color: "#555",
+            textDecoration: "none",
+            display: "block",
+            marginBottom: "0.75rem",
+          }}
+        >
+          matt@mattbwrites.com
+        </a>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "1rem",
+            marginBottom: "1rem",
+          }}
+        >
+          <a
+            href="https://www.youtube.com/@60secondphilosophy"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#555", transition: "color 0.2s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#c00")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+          >
+            <Youtube size={18} />
+          </a>
+          <a
+            href="https://www.instagram.com/mattbwrites/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: "#555", transition: "color 0.2s" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#c13584")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
+          >
+            <Instagram size={18} />
+          </a>
+        </div>
         <p
           style={{
             fontFamily: "'Raleway', sans-serif",
-            fontSize: "0.8rem",
+            fontSize: "0.75rem",
             color: "#888",
-            margin: 0,
           }}
         >
-          © {new Date().getFullYear()} Matt Benjamin. All rights reserved.
+          ©2023 by Matthew Benjamin.
         </p>
       </footer>
+    </div>
+  );
+}
+
+// Work item component
+function WorkItem({
+  image,
+  title,
+  buttonLabel,
+  buttonHref,
+  isYoutube,
+  isSubstack,
+}: {
+  image?: string;
+  title: string;
+  buttonLabel: string;
+  buttonHref: string;
+  isYoutube?: boolean;
+  isSubstack?: boolean;
+}) {
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: "0.75rem",
+        width: "180px",
+      }}
+    >
+      {isYoutube ? (
+        <div
+          style={{
+            width: "180px",
+            height: "220px",
+            backgroundColor: "#f8f4ea",
+            border: "1px solid #d8d0b8",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div
+            style={{
+              width: "80px",
+              height: "56px",
+              backgroundColor: "#ff0000",
+              borderRadius: "14px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div
+              style={{
+                width: 0,
+                height: 0,
+                borderTop: "14px solid transparent",
+                borderBottom: "14px solid transparent",
+                borderLeft: "22px solid white",
+                marginLeft: "4px",
+              }}
+            />
+          </div>
+        </div>
+      ) : isSubstack ? (
+        <img
+          src={SUBSTACK_IMG}
+          alt={title}
+          style={{
+            width: "180px",
+            height: "220px",
+            objectFit: "cover",
+            boxShadow: "3px 3px 12px rgba(0,0,0,0.2)",
+            transition: "transform 0.2s, box-shadow 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLImageElement).style.transform = "translateY(-4px)";
+            (e.currentTarget as HTMLImageElement).style.boxShadow = "5px 8px 20px rgba(0,0,0,0.3)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLImageElement).style.transform = "translateY(0)";
+            (e.currentTarget as HTMLImageElement).style.boxShadow = "3px 3px 12px rgba(0,0,0,0.2)";
+          }}
+        />
+      ) : (
+        <img
+          src={image}
+          alt={title}
+          style={{
+            width: "180px",
+            height: "220px",
+            objectFit: "cover",
+            boxShadow: "3px 3px 12px rgba(0,0,0,0.2)",
+            transition: "transform 0.2s, box-shadow 0.2s",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLImageElement).style.transform = "translateY(-4px)";
+            (e.currentTarget as HTMLImageElement).style.boxShadow = "5px 8px 20px rgba(0,0,0,0.3)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLImageElement).style.transform = "translateY(0)";
+            (e.currentTarget as HTMLImageElement).style.boxShadow = "3px 3px 12px rgba(0,0,0,0.2)";
+          }}
+        />
+      )}
+      <p
+        style={{
+          fontFamily: "'Lora', Georgia, serif",
+          fontSize: "0.9rem",
+          color: "#333",
+          textAlign: "center",
+        }}
+      >
+        {title}
+      </p>
+      <a
+        href={buttonHref}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{
+          display: "inline-block",
+          border: "1px solid #555",
+          color: "#333",
+          fontFamily: "'Raleway', sans-serif",
+          fontWeight: 500,
+          fontSize: "0.72rem",
+          textTransform: "uppercase",
+          letterSpacing: "0.08em",
+          padding: "0.35rem 1rem",
+          textDecoration: "none",
+          transition: "background-color 0.2s, color 0.2s",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#1a1a1a";
+          e.currentTarget.style.color = "#fff";
+          e.currentTarget.style.borderColor = "#1a1a1a";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "transparent";
+          e.currentTarget.style.color = "#333";
+          e.currentTarget.style.borderColor = "#555";
+        }}
+      >
+        {buttonLabel}
+      </a>
     </div>
   );
 }

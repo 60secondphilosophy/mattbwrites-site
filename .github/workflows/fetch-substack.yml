@@ -1,0 +1,28 @@
+name: Fetch Substack Feed
+
+on:
+  schedule:
+    # Run every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  fetch-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Substack RSS Feed
+        run: |
+          curl -s "https://hardlyaclearview.substack.com/feed" > client/public/substack-feed.xml
+
+      - name: Convert RSS to JSON
+        run: |
+          node .github/scripts/rss-to-json.mjs
+
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add client/public/substack-feed.json
+          git diff --quiet && git diff --staged --quiet || (git commit -m "chore: update substack feed cache" && git push)

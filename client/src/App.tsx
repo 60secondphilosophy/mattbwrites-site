@@ -9,6 +9,7 @@ import About from "./pages/About";
 import ValueForValue from "./pages/ValueForValue";
 import Books from "./pages/Books";
 import BonusMaterial from "./pages/BonusMaterial";
+import Blog from "./pages/Blog";
 
 function Router() {
   return (
@@ -18,6 +19,7 @@ function Router() {
       <Route path={"/about"} component={About} />
       <Route path={"/books"} component={Books} />
       <Route path={"/bonus"} component={BonusMaterial} />
+      <Route path={"/blog"} component={Blog} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

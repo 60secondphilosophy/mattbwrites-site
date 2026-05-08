@@ -155,6 +155,24 @@ export default function Home() {
             >
               Bonus Material
             </a>
+            <a
+              href="/blog"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.78rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+                padding: "0.25rem 0.6rem",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#333")}
+            >
+              Blog
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -309,6 +327,20 @@ export default function Home() {
               }}
             >
               Bonus Material
+            </a>
+            <a
+              href="/blog"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontWeight: 500,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "#333",
+                textDecoration: "none",
+              }}
+            >
+              Blog
             </a>
           </div>
         )}

@@ -31,9 +31,9 @@ export default function Blog() {
         setLoading(true);
         setError(null);
 
-        // Fetch the RSS feed from Substack
+        // Fetch the RSS feed from Substack (short stories)
         const response = await fetch(
-          "https://mattbwrites.substack.com/feed",
+          "https://hardlyaclearview.substack.com/feed",
           {
             headers: {
               Accept: "application/rss+xml, application/xml, text/xml",
@@ -136,7 +136,7 @@ export default function Blog() {
             Latest Writing
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Essays, reflections, and updates from my Substack. Subscribe for the full experience.
+            Short stories and creative writing from Hardly a Clear View. Subscribe for the full experience.
           </p>
         </div>
 
@@ -152,14 +152,14 @@ export default function Blog() {
         {error && (
           <div className="max-w-2xl mx-auto mb-12 p-6 bg-secondary/50 rounded-lg border border-border">
             <p className="text-foreground mb-4">{error}</p>
-            <a
-              href="https://mattbwrites.substack.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-2 bg-foreground text-background font-semibold rounded-md hover:bg-foreground/90 transition-colors"
-            >
-              Visit Substack →
-            </a>
+          <a
+            href="https://hardlyaclearview.substack.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-6 py-3 bg-foreground text-background font-semibold rounded-md hover:bg-foreground/90 transition-colors"
+          >
+            Visit Substack →
+          </a>
           </div>
         )}
 
@@ -226,7 +226,7 @@ export default function Blog() {
           <div className="max-w-2xl mx-auto text-center py-16">
             <p className="text-muted-foreground mb-6">No posts found yet.</p>
             <a
-              href="https://mattbwrites.substack.com"
+              href="https://hardlyaclearview.substack.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-foreground text-background font-semibold rounded-md hover:bg-foreground/90 transition-colors"
@@ -252,13 +252,13 @@ export default function Blog() {
               letterSpacing: "0.02em",
             }}
           >
-            Get New Posts in Your Inbox
+            Get New Stories in Your Inbox
           </h3>
           <p className="mb-6 text-sm">
-            Subscribe to my Substack for essays, reflections, and exclusive content.
+            Subscribe to Hardly a Clear View for short stories and creative writing.
           </p>
           <a
-            href="https://mattbwrites.substack.com"
+            href="https://hardlyaclearview.substack.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-3 bg-white text-black font-semibold rounded-md hover:bg-gray-100 transition-colors"

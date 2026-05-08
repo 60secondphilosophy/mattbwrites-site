@@ -31,15 +31,10 @@ export default function Blog() {
         setLoading(true);
         setError(null);
 
-        // Fetch the RSS feed from Substack (short stories)
-        const response = await fetch(
-          "https://hardlyaclearview.substack.com/feed",
-          {
-            headers: {
-              Accept: "application/rss+xml, application/xml, text/xml",
-            },
-          }
-        );
+        // Fetch the RSS feed from Substack (short stories) using CORS proxy
+        const corsProxyUrl = "https://api.allorigins.win/raw?url=";
+        const feedUrl = "https://hardlyaclearview.substack.com/feed";
+        const response = await fetch(corsProxyUrl + encodeURIComponent(feedUrl));
 
         if (!response.ok) {
           throw new Error(`Failed to fetch feed: ${response.statusText}`);

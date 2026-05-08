@@ -32,9 +32,9 @@ export default function Blog() {
         setError(null);
 
         // Fetch the RSS feed from Substack (short stories) using CORS proxy
-        const corsProxyUrl = "https://api.allorigins.win/raw?url=";
         const feedUrl = "https://hardlyaclearview.substack.com/feed";
-        const response = await fetch(corsProxyUrl + encodeURIComponent(feedUrl));
+        const corsProxyUrl = `https://corsproxy.io/?${encodeURIComponent(feedUrl)}`;
+        const response = await fetch(corsProxyUrl);
 
         if (!response.ok) {
           throw new Error(`Failed to fetch feed: ${response.statusText}`);

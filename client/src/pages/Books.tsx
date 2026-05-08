@@ -383,7 +383,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
           {/* Title */}
           <h2
             style={{
-              fontFamily: "'Bebas Neue', cursive",
+              fontFamily: "'Bebas Neue', sans-serif",
               fontSize: "clamp(2.5rem, 5vw, 4rem)",
               fontWeight: 400,
               letterSpacing: "0.04em",
@@ -496,7 +496,7 @@ export default function Books() {
         <Link href="/">
           <span
             style={{
-              fontFamily: "'Bebas Neue', cursive",
+              fontFamily: "'Bebas Neue', sans-serif",
               fontSize: "1.4rem",
               letterSpacing: "0.08em",
               color: "#2a1f14",
@@ -557,7 +557,7 @@ export default function Books() {
         </p>
         <h1
           style={{
-            fontFamily: "'Bebas Neue', cursive",
+            fontFamily: "'Bebas Neue', sans-serif",
             fontSize: "clamp(3rem, 8vw, 6rem)",
             fontWeight: 400,
             letterSpacing: "0.06em",

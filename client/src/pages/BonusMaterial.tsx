@@ -20,6 +20,16 @@ const BONUS_ITEMS = [
     downloadUrl: "https://dl.bookfunnel.com/rqwb477nyr",
     buttonText: "Download",
   },
+  {
+    id: "air-hockey-game",
+    title: "Air Hockey Game",
+    description:
+      "Play an interactive air hockey game with AI opponent. Challenge yourself with different difficulty levels and compete for the highest score.",
+    image: "/images/AWHBCCover.webp",
+    downloadUrl: "/air-hockey",
+    buttonText: "Play Game",
+    isGame: true,
+  },
 ];
 
 export default function BonusMaterial() {
@@ -76,8 +86,8 @@ export default function BonusMaterial() {
                 {/* Download Button */}
                 <a
                   href={item.downloadUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={item.isGame ? undefined : "_blank"}
+                  rel={item.isGame ? undefined : "noopener noreferrer"}
                   className="inline-block px-6 py-3 bg-foreground text-background font-semibold rounded-md hover:bg-foreground/90 transition-colors w-fit"
                 >
                   {item.buttonText}

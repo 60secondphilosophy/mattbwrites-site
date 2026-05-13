@@ -10,6 +10,7 @@ import ValueForValue from "./pages/ValueForValue";
 import Books from "./pages/Books";
 import BonusMaterial from "./pages/BonusMaterial";
 import Blog from "./pages/Blog";
+import AirHockey from "./pages/AirHockey";
 
 function Router() {
   return (
@@ -20,6 +21,7 @@ function Router() {
       <Route path={"/books"} component={Books} />
       <Route path={"/bonus"} component={BonusMaterial} />
       <Route path={"/blog"} component={Blog} />
+      <Route path={"/air-hockey"} component={AirHockey} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

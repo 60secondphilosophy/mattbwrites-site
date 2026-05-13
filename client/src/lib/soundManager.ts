@@ -16,11 +16,11 @@ interface SoundConfig {
 
 const SOUND_CONFIGS: Record<SoundEffect, SoundConfig> = {
   collision: {
-    url: '/manus-storage/bounce-sound_9737713f.mp3',
+    url: '/collision-sound.mp3',
     volume: 0.5,
   },
   goal: {
-    url: '/manus-storage/goal-sound_200df31a.mp3',
+    url: '/goal-sound.mp3',
     volume: 0.6,
   },
 };

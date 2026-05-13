@@ -22,10 +22,10 @@ const BONUS_ITEMS = [
   },
   {
     id: "air-hockey-game",
-    title: "Air Hockey Game",
+    title: "Pinockey",
     description:
-      "Play an interactive air hockey game with AI opponent. Challenge yourself with different difficulty levels and compete for the highest score.",
-    image: "/images/AWHBCCover.webp",
+      "Play the game described in We Are Icarus (with some modifications). Experience the Thrill!",
+    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/pinockey-screenshot-hepBrm8SwNKMU2mgjG7wvz.webp",
     downloadUrl: "/air-hockey",
     buttonText: "Play Game",
     isGame: true,

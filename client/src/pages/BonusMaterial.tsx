@@ -25,7 +25,7 @@ const BONUS_ITEMS = [
     title: "Pinockey",
     description:
       "Play the game described in We Are Icarus (with some modifications). Experience the Thrill!",
-    image: "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/pinockey-screenshot-hepBrm8SwNKMU2mgjG7wvz.webp",
+    image: "/manus-storage/pin_898d3b8e.png",
     downloadUrl: "/air-hockey",
     buttonText: "Play Game",
     isGame: true,

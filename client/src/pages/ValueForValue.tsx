@@ -150,7 +150,7 @@ export default function ValueForValue() {
             margin: "0 auto",
           }}
         >
-          All of my books are offered under a simple idea: if you find value in them, you're invited to return that value in whatever way you can.
+          Most of my books are offered under a simple idea: if you find value in them, you're invited to return that value in whatever way you can.
         </p>
         <p
           style={{
@@ -386,7 +386,7 @@ export default function ValueForValue() {
             margin: "0 auto 1.75rem",
           }}
         >
-          Ko-fi is where you can download all books and audiobooks for free — and where you can choose to support the work if it meant something to you.
+          Ko-fi is where you can download most books and audiobooks for free — and where you can choose to support the work if it meant something to you.
         </p>
         <a
           href="https://ko-fi.com/mattbenjamin"

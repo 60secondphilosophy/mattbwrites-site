@@ -366,7 +366,7 @@ export default function About() {
           }}
         >
           {[
-            { label: "Free Books on Ko-fi", href: "https://ko-fi.com/mattbenjamin", accent: true },
+            { label: "Books on Ko-fi", href: "https://ko-fi.com/mattbenjamin", accent: true },
             { label: "60 Second Philosophy", href: "https://www.youtube.com/@60SPH", accent: false },
             { label: "Hardly a Clear View", href: "https://hardlyaclearview.substack.com/", accent: false },
             { label: "Newsletter", href: "https://matt-benjamin-z0yd2c.subscribepage.io/", accent: false },

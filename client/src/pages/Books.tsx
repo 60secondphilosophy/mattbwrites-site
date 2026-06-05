@@ -330,7 +330,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            ☕ Free Download on Ko-fi
+            ☕ {book.id === "nathan-was-gone" ? "Available on Ko-fi" : "Free Download on Ko-fi"}
           </a>
           <StarRating rating={book.rating} count={book.ratingCount} />
           <a
@@ -553,7 +553,7 @@ export default function Books() {
             margin: "0 0 0.75rem 0",
           }}
         >
-          All Books · Free to Download
+          Books · Mostly Free to Download
         </p>
         <h1
           style={{
@@ -579,7 +579,7 @@ export default function Books() {
             lineHeight: 1.7,
           }}
         >
-          Stories that are true, good, and beautiful — available at no cost on Ko-fi.
+          Stories that are true, good, and beautiful — most available at no cost on Ko-fi.
         </p>
         {/* Quick-jump nav */}
         <div
@@ -718,7 +718,7 @@ export default function Books() {
             margin: "0 0 0.75rem 0",
           }}
         >
-          All Books · Free
+          Books on Ko-fi
         </p>
         <h3
           style={{
@@ -730,7 +730,7 @@ export default function Books() {
             margin: "0 0 1rem 0",
           }}
         >
-          Get Every Book on Ko-fi
+          Get Books on Ko-fi
         </h3>
         <p
           style={{
@@ -741,7 +741,7 @@ export default function Books() {
             margin: "0 0 1.75rem 0",
           }}
         >
-          Every novel, every audiobook — yours at no cost.
+          Most novels and audiobooks — yours at no cost.
         </p>
         <a
           href={KOFI_URL}

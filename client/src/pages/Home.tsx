@@ -511,7 +511,7 @@ export default function Home() {
                 marginBottom: "0.6rem",
               }}
             >
-              All Books &amp; Audio Versions
+              Books &amp; Audio Versions
             </p>
             <h2
               style={{
@@ -523,7 +523,7 @@ export default function Home() {
                 marginBottom: "0.5rem",
               }}
             >
-              Free to Download
+              Mostly Free to Download
             </h2>
             <div
               style={{
@@ -542,7 +542,7 @@ export default function Home() {
                 marginBottom: "1.75rem",
               }}
             >
-              Every novel, every audiobook — yours at no cost. Support the work on Ko-fi if you enjoy it, but it's never required.
+              Most novels and audiobooks are yours at no cost. Support the work on Ko-fi if you enjoy it, but it's never required.
             </p>
             <a
               href="https://ko-fi.com/mattbenjamin"
@@ -581,7 +581,7 @@ export default function Home() {
                 <path d="M18.5 3H5.5C4.12 3 3 4.12 3 5.5v9C3 17.43 5.57 20 8.5 20h7c2.93 0 5.5-2.57 5.5-5.5V5.5C21 4.12 19.88 3 18.5 3zM19 14.5c0 1.93-1.57 3.5-3.5 3.5h-7C6.57 18 5 16.43 5 14.5V5.5C5 5.22 5.22 5 5.5 5h13c.28 0 .5.22.5.5V14.5z"/>
                 <path d="M9 8c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm4 0c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1z"/>
               </svg>
-              Get Free Books on Ko-fi
+              Get Books on Ko-fi
             </a>
             <p
               style={{
@@ -971,7 +971,7 @@ export default function Home() {
           <WorkItem
             image="/images/nathan-was-gone.webp"
             title="Nathan Was Gone"
-            buttonLabel="Free Download"
+            buttonLabel="Available on Ko-fi"
             buttonHref="https://ko-fi.com/mattbenjamin"
           />
           {/* We Are Icarus */}
@@ -1190,7 +1190,7 @@ export default function Home() {
             fontWeight: 600,
           }}
         >
-          ☕ Get all books free on Ko-fi
+          ☕ Get books on Ko-fi
         </a>
         <br />
         <a

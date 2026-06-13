@@ -1261,7 +1261,7 @@ export default function Home() {
             color: "#888",
           }}
         >
-          ©2023 by Matthew Benjamin.
+          ©2026 by Matthew Benjamin.
         </p>
       </footer>
     </div>

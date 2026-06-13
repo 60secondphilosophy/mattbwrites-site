@@ -9,6 +9,7 @@
 
 import { Link } from "wouter";
 import NavBar from "@/components/NavBar";
+import { useSEO } from "@/hooks/useSEO";
 
 const BOOK_ICARUS = "/images/real-icarus-cover.webp";
 const BOOK_ALEX = "/images/real-alex-cover.webp";
@@ -477,6 +478,11 @@ function BookSection({ book, index }: { book: Book; index: number }) {
 }
 
 export default function Books() {
+  useSEO({
+    title: "Books",
+    description: "Browse Matt Benjamin's books — We Are Icarus, Alex Was Here, Nathan Was Gone, and Back to the Beginning. Most are free to download on Ko-fi.",
+    image: "https://mattbwrites.com/images/real-icarus-cover.webp",
+  });
   return (
     <div style={{ minHeight: "100vh", background: "#f5f0e8" }}>
       <NavBar />

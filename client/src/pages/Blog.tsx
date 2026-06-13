@@ -1,6 +1,11 @@
 import NavBar from "@/components/NavBar";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function Blog() {
+  useSEO({
+    title: "Blog",
+    description: "Short stories and creative writing from Matt Benjamin's Substack, Hardly a Clear View. Subscribe free to get new pieces in your inbox.",
+  });
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f5f0e8", color: "#1a1916" }}>
       <NavBar />

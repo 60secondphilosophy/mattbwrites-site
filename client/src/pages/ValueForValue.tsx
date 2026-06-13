@@ -6,8 +6,13 @@
  */
 
 import NavBar from "@/components/NavBar";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function ValueForValue() {
+  useSEO({
+    title: "Value for Value",
+    description: "Matt Benjamin's books are free. No fixed price, no obligation. Give back with your time, talent, or treasure — whatever they were worth to you.",
+  });
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#f0ece0" }}>
       <NavBar />

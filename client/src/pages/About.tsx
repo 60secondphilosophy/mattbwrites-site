@@ -6,10 +6,16 @@
  */
 
 import NavBar from "@/components/NavBar";
+import { useSEO } from "@/hooks/useSEO";
 
 const AUTHOR_PHOTO = "/images/real-author-photo.webp";
 
 export default function About() {
+  useSEO({
+    title: "About",
+    description: "Matt Benjamin is a self-published author, YouTuber (60 Second Philosophy, 20K+ subs), and Substack writer. He writes stories that are true, good, and beautiful.",
+    image: "https://mattbwrites.com/images/real-author-photo.webp",
+  });
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#f0ece0" }}>
       <NavBar />

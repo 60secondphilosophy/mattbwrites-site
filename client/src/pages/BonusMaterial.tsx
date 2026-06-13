@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { ChevronLeft } from "lucide-react";
 import NavBar from "@/components/NavBar";
+import { useSEO } from "@/hooks/useSEO";
 
 const BONUS_ITEMS = [
   {
@@ -34,6 +35,10 @@ const BONUS_ITEMS = [
 ];
 
 export default function BonusMaterial() {
+  useSEO({
+    title: "Bonus Material",
+    description: "Exclusive bonus content for Matt Benjamin's books — deleted scenes, author commentary, playlists, and the Pinockey arcade game.",
+  });
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
       <NavBar />

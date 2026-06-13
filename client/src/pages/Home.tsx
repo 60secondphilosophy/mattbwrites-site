@@ -8,6 +8,7 @@
 import { useState } from "react";
 import { Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
 import NavBar from "@/components/NavBar";
+import { useSEO } from "@/hooks/useSEO";
 
 // Asset URLs
 const HERO_BG = "/images/hero-bg.webp";
@@ -39,6 +40,10 @@ const testimonials = [
 ];
 
 export default function Home() {
+  useSEO({
+    title: "Home",
+    description: "Matt Benjamin is an author of free fiction and Christian non-fiction. Download his books free on Ko-fi — pay what they're worth to you.",
+  });
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
   const prevTestimonial = () => {
@@ -943,7 +948,7 @@ export default function Home() {
           }}
         >
           <a
-            href="https://www.youtube.com/@60secondphilosophy"
+            href="https://www.youtube.com/@60SPH"
             target="_blank"
             rel="noopener noreferrer"
             style={{ color: "#555", transition: "color 0.2s" }}

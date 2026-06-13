@@ -500,17 +500,6 @@ export default function About() {
           </svg>
           matt@mattbwrites.com
         </a>
-        <p
-          style={{
-            fontFamily: "'Raleway', sans-serif",
-            fontSize: "0.72rem",
-            color: "#666",
-            marginTop: "1.25rem",
-            letterSpacing: "0.04em",
-          }}
-        >
-          matt@mattbwrites.com
-        </p>
       </section>
 
       {/* ===== FOOTER ===== */}

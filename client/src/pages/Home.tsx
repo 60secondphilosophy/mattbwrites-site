@@ -6,7 +6,7 @@
  */
 
 import { useState } from "react";
-import { Search, Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
+import { Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Asset URLs
 const HERO_BG = "/images/hero-bg.webp";
@@ -38,7 +38,6 @@ const testimonials = [
 ];
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -192,36 +191,8 @@ export default function Home() {
             <div style={{ width: "22px", height: "2px", backgroundColor: "#333" }} />
           </button>
 
-          {/* Right side: Social + Search */}
+          {/* Right side: Social Icons */}
           <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-            {/* Search */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                border: "1px solid #c0b898",
-                backgroundColor: "#f8f4ea",
-                padding: "0.25rem 0.75rem",
-                gap: "0.4rem",
-              }}
-            >
-              <Search size={14} color="#888" />
-              <input
-                type="search"
-                placeholder="Search..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                style={{
-                  border: "none",
-                  background: "transparent",
-                  outline: "none",
-                  fontFamily: "'Raleway', sans-serif",
-                  fontSize: "0.78rem",
-                  color: "#555",
-                  width: "120px",
-                }}
-              />
-            </div>
             {/* Social Icons */}
             <a
               href="https://www.youtube.com/@60SPH"

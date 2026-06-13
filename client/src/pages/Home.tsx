@@ -6,7 +6,7 @@
  */
 
 import { useState } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
 import NavBar from "@/components/NavBar";
 
 // Asset URLs

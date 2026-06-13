@@ -1,5 +1,6 @@
 import { Link } from "wouter";
 import { ChevronLeft } from "lucide-react";
+import NavBar from "@/components/NavBar";
 
 const BONUS_ITEMS = [
   {
@@ -35,19 +36,7 @@ const BONUS_ITEMS = [
 export default function BonusMaterial() {
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="container flex items-center justify-between py-4">
-          <Link href="/">
-            <a className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2">
-              <ChevronLeft className="w-4 h-4" />
-              Back
-            </a>
-          </Link>
-          <h1 className="text-lg font-bold">Matt Benjamin</h1>
-          <div className="w-10" />
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Main Content */}
       <main className="flex-1 container py-16">

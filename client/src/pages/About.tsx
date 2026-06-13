@@ -5,100 +5,14 @@
  * Fonts: Bebas Neue (display), Oswald (headings), Lora (body)
  */
 
+import NavBar from "@/components/NavBar";
+
 const AUTHOR_PHOTO = "/images/real-author-photo.webp";
 
 export default function About() {
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#f0ece0" }}>
-
-      {/* ===== NAV ===== */}
-      <nav
-        style={{
-          backgroundColor: "#f0ece0",
-          borderBottom: "1px solid #d8d0b8",
-          position: "sticky",
-          top: 0,
-          zIndex: 100,
-        }}
-      >
-        <div
-          style={{
-            maxWidth: "1200px",
-            margin: "0 auto",
-            padding: "0 1.5rem",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            height: "56px",
-          }}
-        >
-          <a
-            href="/"
-            style={{
-              fontFamily: "'Bebas Neue', Impact, sans-serif",
-              fontSize: "1.4rem",
-              letterSpacing: "0.08em",
-              color: "#1a1a1a",
-              textDecoration: "none",
-            }}
-          >
-            Matt Benjamin
-          </a>
-          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-            <a
-              href="/value-for-value"
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 500,
-                fontSize: "0.78rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                color: "#555",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
-            >
-              Value for Value
-            </a>
-            <a
-              href="/books"
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 500,
-                fontSize: "0.78rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                color: "#555",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#c8b87a")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
-            >
-              Books
-            </a>
-            <a
-              href="/"
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontWeight: 500,
-                fontSize: "0.78rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                color: "#555",
-                textDecoration: "none",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#1a1a1a")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#555")}
-            >
-              ← Home
-            </a>
-          </div>
-        </div>
-      </nav>
+      <NavBar />
 
       {/* ===== HERO: Full-width photo with overlay ===== */}
       <section

@@ -1,37 +1,9 @@
-import { Link } from "wouter";
-import { ChevronLeft } from "lucide-react";
+import NavBar from "@/components/NavBar";
 
 export default function Blog() {
   return (
     <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#f5f0e8", color: "#1a1916" }}>
-      {/* Navigation */}
-      <nav
-        className="sticky top-0 z-50 backdrop-blur-sm border-b"
-        style={{ backgroundColor: "rgba(245,240,232,0.95)", borderColor: "#d4c9a8" }}
-      >
-        <div className="container flex items-center justify-between py-4">
-          <Link href="/">
-            <a
-              className="text-sm font-medium flex items-center gap-2 transition-colors"
-              style={{ color: "#8a7a5a" }}
-            >
-              <ChevronLeft className="w-4 h-4" />
-              Back
-            </a>
-          </Link>
-          <span
-            style={{
-              fontFamily: "'Bebas Neue', sans-serif",
-              fontSize: "1.25rem",
-              letterSpacing: "0.05em",
-              color: "#1a1916",
-            }}
-          >
-            Matt Benjamin
-          </span>
-          <div className="w-10" />
-        </div>
-      </nav>
+      <NavBar />
 
       {/* Hero */}
       <section

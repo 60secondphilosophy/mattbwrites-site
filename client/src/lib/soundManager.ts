@@ -39,7 +39,6 @@ class SoundManager {
     try {
       this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
       this.isInitialized = true;
-      console.log('SoundManager initialized');
     } catch (error) {
       console.error('Failed to initialize AudioContext:', error);
     }
@@ -58,7 +57,6 @@ class SoundManager {
       const arrayBuffer = await response.arrayBuffer();
       const audioBuffer = await this.audioContext!.decodeAudioData(arrayBuffer);
       this.soundCache.set(effect, audioBuffer);
-      console.log(`Preloaded sound: ${effect}`);
     } catch (error) {
       console.error(`Failed to preload sound ${effect}:`, error);
     }

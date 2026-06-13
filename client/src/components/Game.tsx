@@ -93,14 +93,10 @@ export const Game: React.FC<GameProps> = ({ gameMode = 'pvp', aiDifficulty = 'me
         return;
       }
 
-      console.log('AI Turn - Phase:', currentState.turnPhase);
-
       if (currentState.turnPhase === 'pin-placement') {
         // AI pin placement logic
         const aiPlayer = currentState.players[1]; // Player 2 is AI
         const pinToMove = selectPinToMove(aiPlayer.pins, currentState.players[0].pins, currentState.puck.position, config, aiDifficulty);
-        
-        console.log('AI selecting pin:', pinToMove);
         
         // Select the pin
         setGameState((prevState) => {
@@ -118,8 +114,6 @@ export const Game: React.FC<GameProps> = ({ gameMode = 'pvp', aiDifficulty = 'me
               aiDifficulty
             );
 
-            console.log('AI moving pin to:', targetPos);
-
             // Move the pin
             newState = movePinToward(newState, pinToMove, targetPos, config);
             aiPinsMovedThisTurnRef.current += 1;
@@ -133,7 +127,6 @@ export const Game: React.FC<GameProps> = ({ gameMode = 'pvp', aiDifficulty = 'me
             if (leadPinMovedRef.current) {
               newState = startPuckAiming(newState);
               aiPinsMovedThisTurnRef.current = 0;
-              console.log('AI transitioning to aiming');
             }
           }
 
@@ -158,8 +151,6 @@ export const Game: React.FC<GameProps> = ({ gameMode = 'pvp', aiDifficulty = 'me
           (currentState.puck.position.y - opponentGoal.y) ** 2
         );
         const power = calculateShotPower(aiDifficulty, puckDistance);
-
-        console.log('AI shooting with power:', power, 'direction:', direction);
 
         // Update power and shoot
         setGameState((prevState) => {

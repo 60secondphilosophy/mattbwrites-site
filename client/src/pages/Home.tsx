@@ -9,12 +9,12 @@ import { useState } from "react";
 import { Search, Youtube, Instagram, ChevronLeft, ChevronRight } from "lucide-react";
 
 // Asset URLs
-const HERO_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/hero-bg-mKAqVJrmfDdPHnvrhGS5jz.webp";
+const HERO_BG = "/images/hero-bg.webp";
 const BOOK_ICARUS = "/images/real-icarus-cover.webp";
 const BOOK_ALEX = "/images/real-alex-cover.webp";
 const BOOK_BACK = "/images/real-back-cover.webp";
-const DARK_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/dark-texture-bg-3vgmafUFFg7xrx6tiNQNoa.webp";
-const STARS_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663633554144/jEcgBdc7PyJztsAfGFeGpi/stars-bg-5LsJLVi2j8QAtergCaUGJD.webp";
+const DARK_BG = "/images/dark-texture-bg.webp";
+const STARS_BG = "/images/stars-bg.webp";
 const AUTHOR_PHOTO = "/images/real-author-photo.webp";
 const SUBSTACK_IMG = "/images/hardly-a-clear-view.webp";
 

@@ -39,6 +39,7 @@ interface Book {
   dark?: boolean;
   goodreadsUrl: string;
   kofiUrl: string;
+  price: string;
 }
 
 const BOOKS: Book[] = [
@@ -54,6 +55,7 @@ const BOOKS: Book[] = [
     dark: true,
     goodreadsUrl: "https://www.goodreads.com/book/show/208887598-we-are-icarus",
     kofiUrl: "https://ko-fi.com/s/2d5d9d477e",
+    price: "$5+",
     description:
       "It's the perfect world — be anyone, do anything. The only cost? Your humanity.\n\nIcarus believes he's happy. And why wouldn't he be? Each day in the COR, a virtual world indistinguishable from reality, was exactly what he wanted. No sickness, no hunger, no pain — only thrilling experiences and unfettered pleasures.\n\nBut when an unexpected meeting with a beautiful woman leaves him questioning if he can ever be truly happy inside the COR, he begins a quest for answers. Answers the government, his friends, and even parts of himself will do anything to keep hidden.\n\nTo stop him from escaping into the Void.\n\nFor fans of 1984, Brave New World, and The Matrix.",
     reviews: [
@@ -88,6 +90,7 @@ const BOOKS: Book[] = [
     dark: false,
     goodreadsUrl: "https://www.goodreads.com/book/show/240073588-alex-was-here",
     kofiUrl: "https://ko-fi.com/s/0c8805122a",
+    price: "$1+",
     description:
       "Two teens. A rock in the woods. And Chop Suey.\n\nFifteen-year-old Nathan Green is homeschooled and restless, pedaling through the woods in search of something, anything, to give his summer meaning. Then he finds Alex, who pulls Nathan into her world — vibrant, chaotic, hurt.\n\nTheir friendship saves Nathan's summer, but can it save Alex's life?\n\nAlex Was Here faithfully chronicles the nostalgia of teenage years in the early 2000s and the sort of friendship that never gives up.",
     reviews: [
@@ -122,6 +125,7 @@ const BOOKS: Book[] = [
     dark: true,
     goodreadsUrl: "https://www.goodreads.com/book/show/247253585-nathan-was-gone",
     kofiUrl: "https://ko-fi.com/s/de0b484212",
+    price: "$5+",
     description:
       "He broke her heart. Now he's broken, and only she can save him.\n\nStruggling to define her relationship with her high school best friend, Alex fears her plans for life are in jeopardy. Nate promised he'd come back to her after college, but day by day the Nate who made that promise is disappearing. Starting her career as a nurse, Alex watches as Nate loses everything—including her.\n\nBut as Alex works to start fresh, Nate's addiction lands him in a hospital bed and pulls her back into his orbit as a caretaker.\n\nNow, despite a budding relationship with someone new, Alex holds the ruins of her former-best-friend's life in her hands— knowing she will have to choose between the past she still loves and the future she is building.\n\nNathan Was Gone is a story of love, addiction, and the power of old bonds.",
     reviews: [
@@ -155,6 +159,7 @@ const BOOKS: Book[] = [
     dark: false,
     goodreadsUrl: "https://www.goodreads.com/book/show/218697262-back-to-the-beginning",
     kofiUrl: "https://ko-fi.com/s/6036e7da97",
+    price: "Free",
     description:
       "What does it mean to live well?\n\nIn a world where modern distractions cloud our sense of purpose, Back to the Beginning offers a refreshing return to the timeless wisdom found in the early chapters of Genesis. This book delves into the foundational aspects of the human experience — creativity, work, rest, and community.\n\nDrawing from the creation narrative, Back to the Beginning challenges readers to look beyond moral imperatives and discover a way of life that aligns with God's original design for humanity. Whether you are seeking to enhance your spiritual journey, find balance in your daily life, or understand your place in the larger story of creation, this book offers a perspective that is both ancient and profoundly relevant today.",
     reviews: [
@@ -332,7 +337,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            ☕ {book.id === "nathan-was-gone" ? "Available on Ko-fi" : "Free Download on Ko-fi"}
+            ☕ {book.price} on Ko-fi
           </a>
           <StarRating rating={book.rating} count={book.ratingCount} />
           <a
@@ -480,7 +485,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
 export default function Books() {
   useSEO({
     title: "Books",
-    description: "Browse Matt Benjamin's books — We Are Icarus, Alex Was Here, Nathan Was Gone, and Back to the Beginning. Most are free to download on Ko-fi.",
+    description: "Browse Matt Benjamin's books — We Are Icarus, Alex Was Here, Nathan Was Gone, and Back to the Beginning — with current Ko-fi prices.",
     image: "https://mattbwrites.com/images/real-icarus-cover.webp",
   });
   return (
@@ -506,7 +511,7 @@ export default function Books() {
             margin: "0 0 0.75rem 0",
           }}
         >
-          Books · Mostly Free to Download
+          Books · Available on Ko-fi
         </p>
         <h1
           style={{
@@ -532,7 +537,7 @@ export default function Books() {
             lineHeight: 1.7,
           }}
         >
-          Stories that are true, good, and beautiful — most available at no cost on Ko-fi.
+          Stories that are true, good, and beautiful — available directly from the author on Ko-fi.
         </p>
         {/* Quick-jump nav */}
         <div
@@ -694,7 +699,7 @@ export default function Books() {
             margin: "0 0 1.75rem 0",
           }}
         >
-          Most novels and audiobooks — yours at no cost.
+          Shop ebooks and audiobooks directly from the author.
         </p>
         <a
           href={KOFI_URL}

@@ -42,7 +42,7 @@ const testimonials = [
 export default function Home() {
   useSEO({
     title: "Home",
-    description: "Matt Benjamin is an author of free fiction and Christian non-fiction. Download his books free on Ko-fi — pay what they're worth to you.",
+    description: "Matt Benjamin is an author of fiction and Christian non-fiction. Find his books and audiobooks on Ko-fi.",
   });
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -109,7 +109,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== FREE DOWNLOAD FOCAL POINT ===== */}
+      {/* ===== KO-FI SHOP FOCAL POINT ===== */}
       <section
         style={{
           backgroundImage: `url(${DARK_BG})`,
@@ -237,7 +237,7 @@ export default function Home() {
                 marginBottom: "0.5rem",
               }}
             >
-              Mostly Free to Download
+              Books on Ko-fi
             </h2>
             <div
               style={{
@@ -256,7 +256,7 @@ export default function Home() {
                 marginBottom: "1.75rem",
               }}
             >
-              Most novels and audiobooks are yours at no cost. Support the work on Ko-fi if you enjoy it, but it's never required.
+              Shop ebooks and audiobooks directly from the author, with prices starting at free.
             </p>
             <a
               href="https://ko-fi.com/mattbenjamin"
@@ -308,25 +308,6 @@ export default function Home() {
             >
               ko-fi.com/mattbenjamin
             </p>
-            <a
-              href="/value-for-value"
-              style={{
-                fontFamily: "'Raleway', sans-serif",
-                fontSize: "0.72rem",
-                color: "#c8b87a",
-                textDecoration: "none",
-                letterSpacing: "0.06em",
-                marginTop: "0.4rem",
-                display: "inline-block",
-                borderBottom: "1px solid rgba(200,184,122,0.4)",
-                paddingBottom: "1px",
-                transition: "color 0.2s",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#e8d898")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#c8b87a")}
-            >
-              Learn about the Value for Value model →
-            </a>
           </div>
         </div>
       </section>
@@ -678,29 +659,29 @@ export default function Home() {
           <WorkItem
             image={BOOK_ALEX}
             title="Alex Was Here"
-            buttonLabel="Free Download"
-            buttonHref="https://ko-fi.com/mattbenjamin"
+            buttonLabel="$1+ on Ko-fi"
+            buttonHref="https://ko-fi.com/s/0c8805122a"
           />
           {/* Nathan Was Gone */}
           <WorkItem
             image="/images/nathan-was-gone.webp"
             title="Nathan Was Gone"
-            buttonLabel="Available on Ko-fi"
-            buttonHref="https://ko-fi.com/mattbenjamin"
+            buttonLabel="$5+ on Ko-fi"
+            buttonHref="https://ko-fi.com/s/de0b484212"
           />
           {/* We Are Icarus */}
           <WorkItem
             image={BOOK_ICARUS}
             title="We Are Icarus"
-            buttonLabel="Free Download"
-            buttonHref="https://ko-fi.com/mattbenjamin"
+            buttonLabel="$5+ on Ko-fi"
+            buttonHref="https://ko-fi.com/s/2d5d9d477e"
           />
           {/* Back to the Beginning */}
           <WorkItem
             image={BOOK_BACK}
             title="Back to the Beginning"
-            buttonLabel="Free Download"
-            buttonHref="https://ko-fi.com/mattbenjamin"
+            buttonLabel="Free on Ko-fi"
+            buttonHref="https://ko-fi.com/s/6036e7da97"
           />
           {/* YouTube */}
           <WorkItem

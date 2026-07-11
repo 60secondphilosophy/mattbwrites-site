@@ -5,7 +5,6 @@ import { Youtube, Instagram } from "lucide-react";
 const NAV_LINKS = [
   { href: "/about", label: "About" },
   { href: "/books", label: "Books" },
-  { href: "/value-for-value", label: "Value for Value" },
   { href: "/bonus", label: "Bonus Material" },
   { href: "/blog", label: "Blog" },
 ];

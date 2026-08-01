@@ -472,7 +472,7 @@ export default function Home() {
           Get updates on new books, audiobooks, and ideas straight to your inbox.
         </p>
         <a
-          href="https://matt-benjamin-z0yd2c.subscribepage.io/"
+          href="https://mattwrites.eo.page/zb6q4"
           target="_blank"
           rel="noopener noreferrer"
           style={{

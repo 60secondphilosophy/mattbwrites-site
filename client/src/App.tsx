@@ -10,6 +10,7 @@ import Books from "./pages/Books";
 import BonusMaterial from "./pages/BonusMaterial";
 import Blog from "./pages/Blog";
 import AirHockey from "./pages/AirHockey";
+import Alphabreaker from "./pages/Alphabreaker";
 
 function Router() {
   return (
@@ -17,6 +18,7 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/about"} component={About} />
       <Route path={"/books"} component={Books} />
+      <Route path={"/alphabreaker"} component={Alphabreaker} />
       <Route path={"/bonus"} component={BonusMaterial} />
       <Route path={"/blog"} component={Blog} />
       <Route path={"/air-hockey"} component={AirHockey} />

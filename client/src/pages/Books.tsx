@@ -40,6 +40,9 @@ interface Book {
   goodreadsUrl: string;
   kofiUrl: string;
   price: string;
+  primaryLabel?: string;
+  secondaryUrl?: string;
+  secondaryLabel?: string;
 }
 
 const BOOKS: Book[] = [
@@ -89,8 +92,11 @@ const BOOKS: Book[] = [
     cover: BOOK_ALEX,
     dark: false,
     goodreadsUrl: "https://www.goodreads.com/book/show/240073588-alex-was-here",
-    kofiUrl: "https://ko-fi.com/s/0c8805122a",
+    kofiUrl: "/alex/?utm_source=author_site&utm_medium=books_page&utm_campaign=alex_reader_path",
     price: "$1+",
+    primaryLabel: "Start with Alex Was Here",
+    secondaryUrl: "https://www.youtube.com/watch?v=xwdKH8Eb_5E",
+    secondaryLabel: "Hear Chapter One Free ↗",
     description:
       "Two teens. A rock in the woods. And Chop Suey.\n\nFifteen-year-old Nathan Green is homeschooled and restless, pedaling through the woods in search of something, anything, to give his summer meaning. Then he finds Alex, who pulls Nathan into her world — vibrant, chaotic, hurt.\n\nTheir friendship saves Nathan's summer, but can it save Alex's life?\n\nAlex Was Here faithfully chronicles the nostalgia of teenage years in the early 2000s and the sort of friendship that never gives up.",
     reviews: [
@@ -308,8 +314,8 @@ function BookSection({ book, index }: { book: Book; index: number }) {
           </div>
           <a
             href={book.kofiUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={book.kofiUrl.startsWith("http") ? "_blank" : undefined}
+            rel={book.kofiUrl.startsWith("http") ? "noopener noreferrer" : undefined}
             style={{
               display: "inline-block",
               background: "#FF5E5B",
@@ -337,8 +343,27 @@ function BookSection({ book, index }: { book: Book; index: number }) {
               e.currentTarget.style.transform = "translateY(0)";
             }}
           >
-            ☕ {book.price} on Ko-fi
+            {book.primaryLabel ?? `☕ ${book.price} on Ko-fi`}
           </a>
+          {book.secondaryUrl && book.secondaryLabel && (
+            <a
+              href={book.secondaryUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.72rem",
+                fontWeight: 600,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                color: book.dark ? "#c8b87a" : "#8b6914",
+                textDecoration: "underline",
+                textUnderlineOffset: "4px",
+              }}
+            >
+              {book.secondaryLabel}
+            </a>
+          )}
           <StarRating rating={book.rating} count={book.ratingCount} />
           <a
             href={book.goodreadsUrl}
@@ -485,7 +510,7 @@ function BookSection({ book, index }: { book: Book; index: number }) {
 export default function Books() {
   useSEO({
     title: "Books",
-    description: "Browse Matt Benjamin's books — We Are Icarus, Alex Was Here, Nathan Was Gone, and Back to the Beginning — with current Ko-fi prices.",
+    description: "Browse Matt Benjamin's books — start with Alex Was Here, then discover Nathan Was Gone, We Are Icarus, and Back to the Beginning.",
     image: "https://mattbwrites.com/images/real-icarus-cover.webp",
   });
   return (
@@ -511,7 +536,7 @@ export default function Books() {
             margin: "0 0 0.75rem 0",
           }}
         >
-          Books · Available on Ko-fi
+          Books · Start Here
         </p>
         <h1
           style={{
@@ -537,7 +562,7 @@ export default function Books() {
             lineHeight: 1.7,
           }}
         >
-          Stories that are true, good, and beautiful — available directly from the author on Ko-fi.
+          Start with <em>Alex Was Here</em>, then continue the Alex and Nathan story with <em>Nathan Was Gone</em>.
         </p>
         {/* Quick-jump nav */}
         <div

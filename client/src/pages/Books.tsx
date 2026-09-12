@@ -95,8 +95,8 @@ const BOOKS: Book[] = [
     kofiUrl: "/alex/?utm_source=author_site&utm_medium=books_page&utm_campaign=alex_reader_path",
     price: "$1+",
     primaryLabel: "Start with Alex Was Here",
-    secondaryUrl: "https://www.youtube.com/watch?v=xwdKH8Eb_5E",
-    secondaryLabel: "Hear Chapter One Free ↗",
+    secondaryUrl: "/chapter-one?utm_source=author_site&utm_medium=books_page&utm_campaign=awh_chapter_one",
+    secondaryLabel: "Read Chapter One Free →",
     description:
       "Two teens. A rock in the woods. And Chop Suey.\n\nFifteen-year-old Nathan Green is homeschooled and restless, pedaling through the woods in search of something, anything, to give his summer meaning. Then he finds Alex, who pulls Nathan into her world — vibrant, chaotic, hurt.\n\nTheir friendship saves Nathan's summer, but can it save Alex's life?\n\nAlex Was Here faithfully chronicles the nostalgia of teenage years in the early 2000s and the sort of friendship that never gives up.",
     reviews: [

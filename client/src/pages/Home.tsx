@@ -249,9 +249,7 @@ export default function Home() {
               Book one of the Alex and Nathan duology
             </p>
             <a
-              href="https://www.youtube.com/watch?v=xwdKH8Eb_5E"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/chapter-one?utm_source=author_site&utm_medium=homepage&utm_campaign=awh_chapter_one"
               style={{
                 display: "inline-block",
                 fontFamily: "'Raleway', sans-serif",
@@ -265,7 +263,7 @@ export default function Home() {
                 textUnderlineOffset: "4px",
               }}
             >
-              Hear Chapter One Free ↗
+              Read Chapter One Free →
             </a>
           </div>
         </div>

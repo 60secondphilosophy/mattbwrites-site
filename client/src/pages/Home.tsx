@@ -225,7 +225,7 @@ export default function Home() {
                 marginBottom: "0.6rem",
               }}
             >
-              Books &amp; Audio Versions
+              Start with Book One
             </p>
             <h2
               style={{
@@ -237,7 +237,7 @@ export default function Home() {
                 marginBottom: "0.5rem",
               }}
             >
-              Books on Ko-fi
+              Alex Was Here
             </h2>
             <div
               style={{
@@ -256,12 +256,10 @@ export default function Home() {
                 marginBottom: "1.75rem",
               }}
             >
-              Shop ebooks and audiobooks directly from the author, with prices starting at free.
+              One restless summer. One impossible friendship. Start the Alex and Nathan story here.
             </p>
             <a
-              href="https://ko-fi.com/mattbenjamin"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/alex/?utm_source=author_site&utm_medium=homepage&utm_campaign=alex_reader_path"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -290,12 +288,7 @@ export default function Home() {
                 e.currentTarget.style.transform = "translateY(0)";
               }}
             >
-              {/* Ko-fi cup icon */}
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.5 3H5.5C4.12 3 3 4.12 3 5.5v9C3 17.43 5.57 20 8.5 20h7c2.93 0 5.5-2.57 5.5-5.5V5.5C21 4.12 19.88 3 18.5 3zM19 14.5c0 1.93-1.57 3.5-3.5 3.5h-7C6.57 18 5 16.43 5 14.5V5.5C5 5.22 5.22 5 5.5 5h13c.28 0 .5.22.5.5V14.5z"/>
-                <path d="M9 8c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1zm4 0c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1z"/>
-              </svg>
-              Get Books on Ko-fi
+              Start with Alex Was Here
             </a>
             <p
               style={{
@@ -306,8 +299,27 @@ export default function Home() {
                 letterSpacing: "0.04em",
               }}
             >
-              ko-fi.com/mattbenjamin
+              Book one of the Alex and Nathan duology
             </p>
+            <a
+              href="https://www.youtube.com/watch?v=xwdKH8Eb_5E"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-block",
+                fontFamily: "'Raleway', sans-serif",
+                fontSize: "0.76rem",
+                fontWeight: 600,
+                color: "#c8b87a",
+                textTransform: "uppercase",
+                letterSpacing: "0.1em",
+                marginTop: "0.75rem",
+                textDecoration: "underline",
+                textUnderlineOffset: "4px",
+              }}
+            >
+              Hear Chapter One Free ↗
+            </a>
           </div>
         </div>
       </section>
@@ -450,7 +462,7 @@ export default function Home() {
             letterSpacing: "0.02em",
           }}
         >
-          Subscribe to My Newsletter
+          Join the Reader List
         </h2>
         <div
           style={{
@@ -469,7 +481,7 @@ export default function Home() {
             lineHeight: 1.7,
           }}
         >
-          Get updates on new books, audiobooks, and ideas straight to your inbox.
+          Get new-release news, behind-the-scenes notes, and occasional extras from Matt's fiction.
         </p>
         <a
           href="https://mattwrites.eo.page/zb6q4"
@@ -491,7 +503,7 @@ export default function Home() {
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#333")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#1a1a1a")}
         >
-          Sign Up
+          Join the Reader List
         </a>
       </section>
 
@@ -659,8 +671,8 @@ export default function Home() {
           <WorkItem
             image={BOOK_ALEX}
             title="Alex Was Here"
-            buttonLabel="$1+ on Ko-fi"
-            buttonHref="https://ko-fi.com/s/0c8805122a"
+            buttonLabel="Start with Book One"
+            buttonHref="/alex/?utm_source=author_site&utm_medium=work_grid&utm_campaign=alex_reader_path"
           />
           {/* Nathan Was Gone */}
           <WorkItem
